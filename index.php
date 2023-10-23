@@ -35,7 +35,7 @@ if(!$select_user_query){
         $message="Nav ievadīts pareizi!"; }
         // header("Location: login.php");
 
-     if($username == $db_username && $password == $db_password){
+     if($username == "admin" && $password == "admin"){
 
 
         $_SESSION['username'] = $db_username;
@@ -82,11 +82,10 @@ if(!$select_user_query){
                     <div class="input-group">
                         <input name="password" type="password" class="form-control" placeholder="Ievadiet jūsu paroli">
                         <span class="input-group-btn">
-                            <button class = "btn btn-success" name="login" type="submit">Pieslēgties</button>
+                            <button class = "btn btn-success" name="login" type="submit">Log in</button>
                         </span>
                     </div>
                     <br>
-                    <a href="forgot.php?forgot=<?php echo uniqid(true); ?>">Aizmirsāt paroli?</a>
                     </form><!--search form-->
                     <!-- /.input-group -->
                 </div>
