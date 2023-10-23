@@ -1,11 +1,11 @@
 <?php
 require('db.php');
-include ('mainPage.php');
-?>
- <link rel="stylesheet" type="text/css" href="css/admin.css">
-<?php 
 
-$endpoint = '/persons/get/all';
+?>
+<link rel="stylesheet" type="text/css" href="css/admin.css">
+<?php
+
+$endpoint = '/premium-subscriptions/get/all'; // Adjust the endpoint as needed
 $apiUrl = $apiBaseUrl . $endpoint;
 
 $response = file_get_contents($apiUrl);
@@ -17,7 +17,7 @@ if ($response === false) {
 $data = json_decode($response, true);
 
 if ($data === null) {
-    die('Failed to parse JSON response: ' . json_last_error_msg());
+    die('Failed to parse JSON response.');
 }
 
 // Pagination settings
@@ -56,7 +56,7 @@ echo '}';
 echo '</script>';
 echo '</head>';
 echo '<body>';
-echo '<h1>Person Data</h1>';
+echo '<h1>Premium Subscription Data</h1>';
 
 // Sort the data when a column header is clicked
 if (isset($_GET['sort']) && isset($_GET['order'])) {
@@ -76,24 +76,21 @@ $endIndex = min($startIndex + $itemsPerPage, $totalItems);
 echo '<table>';
 echo '<tr>';
 echo '<th><a href="?sort=id&order=asc">ID &#8593;</a> <a href="?sort=id&order=desc">ID &#8595;</a></th>';
-echo '<th><a href="?sort=firstName&order=asc">First Name &#8593;</a> <a href="?sort=firstName&order=desc">First Name &#8595;</a></th>';
-echo '<th><a href="?sort=surname&order=asc">Surname &#8593;</a> <a href="?sort=surname&order=desc">Surname &#8595;</a></th>';
+echo '<th><a href="?sort=endDate&order=asc">End Date &#8593;</a> <a href="?sort=endDate&order=desc">End Date &#8595;</a></th>';
+echo '<th><a href="?sort=discountAmount&order=asc">Discount Amount &#8593;</a> <a href="?sort=discountAmount&order=desc">Discount Amount &#8595;</a></th>';
 echo '<th>Client ID</th>';
 echo '</tr>';
 
 for ($i = $startIndex; $i < $endIndex; $i++) {
-    $person = $data[$i];
+    $subscription = $data[$i];
     echo '<tr>';
-    echo '<td>' . $person['id'] . '</td>';
-    echo '<td>' . $person['firstName'] . '</td>';
-    echo '<td>' . $person['surname'] . '</td>';
+    echo '<td>' . $subscription['id'] . '</td>';
+    echo '<td>' . $subscription['endDate'] . '</td>';
+    echo '<td>' . $subscription['discountAmount'] . '</td>';
     echo '<td>';
-    echo '<a href="javascript:void(0);" onclick="toggleClientDetails(\'' . $person['id'] . '\')">Show Client</a>';
-    echo '<div id="' . $person['id'] . '" class="hidden">';
-    echo 'Client ID: ' . $person['client']['id'] . '<br>';
-    echo 'Username: ' . $person['client']['username'] . '<br>';
-    echo 'Email: ' . $person['client']['email'] . '<br>';
-    echo 'Bank Account: ' . $person['client']['bankAccount'] . '<br>';
+    echo '<a href="javascript:void(0);" onclick="toggleClientDetails(\'' . $subscription['id'] . '\')">Show Client</a>';
+    echo '<div id="' . $subscription['id'] . '" class="hidden">';
+    echo 'Client ID: ' . $subscription['client_id'] . '<br>';
     echo '</div>';
     echo '</td>';
     echo '</tr>';

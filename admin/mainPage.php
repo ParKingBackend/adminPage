@@ -2,15 +2,12 @@
 <html>
 <head>
     <title>Admin Panel</title>
-    <link rel="stylesheet" type="text/css" href="css/admin.css">
+
 </head>
 <body>
-    <button id="toggleSidebar" class="toggle-button">Show Sidebar</button>
-
     <div id="sidebar" class="hidden">
-        <button id="hideSidebar" class="toggle-button">Hide Sidebar</button>
+        <button id="toggleSidebar" class="toggle-button">Toggle Sidebar</button>
         <ul>
-            <li><a href="mainPage.php">Main Page</a></li>
             <li><a href="clients.php">Clients</a></li>
             <li><a href="companies.php">Companies</a></li>
             <li><a href="persons.php">Persons</a></li>
@@ -24,20 +21,11 @@
 
     <script>
         // JavaScript to toggle sidebar visibility
-        const showButton = document.getElementById('toggleSidebar');
-        const hideButton = document.getElementById('hideSidebar');
+        const toggleButton = document.getElementById('toggleSidebar');
         const sidebar = document.getElementById('sidebar');
 
-        showButton.addEventListener('click', () => {
-            sidebar.classList.remove('hidden');
-            showButton.style.display = 'none';
-            hideButton.style.display = 'block';
-        });
-
-        hideButton.addEventListener('click', () => {
-            sidebar.classList.add('hidden');
-            showButton.style.display = 'block';
-            hideButton.style.display = 'none';
+        toggleButton.addEventListener('click', () => {
+            sidebar.classList.toggle('hidden');
         });
     </script>
 </body>
