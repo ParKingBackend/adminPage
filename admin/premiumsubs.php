@@ -5,7 +5,7 @@ require('db.php');
 <link rel="stylesheet" type="text/css" href="css/admin.css">
 <?php
 
-$endpoint = '/premium-subscriptions/get/all'; // Adjust the endpoint as needed
+$endpoint = '/api/subscription/get/all'; // Adjust the endpoint as needed
 $apiUrl = $apiBaseUrl . $endpoint;
 
 $response = file_get_contents($apiUrl);

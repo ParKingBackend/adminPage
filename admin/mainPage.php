@@ -11,7 +11,7 @@
             <li><a href="clients.php">Clients</a></li>
             <li><a href="companies.php">Companies</a></li>
             <li><a href="persons.php">Persons</a></li>
-            <li><a href="premium_subscriptions.php">Premium Subscriptions</a></li>
+            <li><a href="premiumsubs.php">Premium Subscriptions</a></li>
             <li><a href="parking.php">Parking</a></li>
             <li><a href="reports.php">Reports</a></li>
             <li><a href="reservations.php">Reservations</a></li>
