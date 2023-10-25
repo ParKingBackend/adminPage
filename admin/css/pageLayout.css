@@ -17,12 +17,8 @@ body {
   margin: 0;
   padding: 0;
   background-color: rgba(var(--background-color), 1);
-  /* font-family: sans-serif;
-  color: rgba(var(--text-color), 1); */
-}
-
-h1 {
-  color: rgba(var(--secondary-color-darker), 1);
+  font-family: sans-serif;
+  color: rgba(var(--text-color), 1);
 }
 
 .grid-container {
@@ -69,18 +65,17 @@ h1 {
 
 /* Style for the table */
 table {
+  width: 100%;
   border-collapse: collapse;
   border-radius: 10px; /* Add rounded corners to the table */
   overflow: hidden; /* Hide overflow for rounded corners */
-  width: 100%;
-  border: none;
 }
 
 table th,
 table td {
   padding: 8px 12px;
   text-align: left;
-  color: rgba(var(--secondary-color), 1);
+  border: 1px solid rgba(var(--background-color), 1);
 }
 
 table th {
@@ -117,119 +112,8 @@ table th a {
 
 td {
   color: rgba(var(--secondary-color), 1);
-  justify-content: center;
 }
 
 tr {
   background-color: rgba(var(--secondary-color-darker), 1);
-}
-
-#edit-td:last-child {
-  background-color: rgba(var(--primary-color), 1);
-  text-align: center;
-  padding: 0;
-  transition: background-color 0.2s; /* Add a transition for smoother scaling */
-}
-
-#edit-td:last-child > a {
-  display: inline-block;
-  text-decoration: none;
-  width: 100%;
-  height: 100%;
-  transition: transform 0.2s; /* Add a transition for smoother scaling */
-}
-
-.addNew:last-child > a > svg {
-  align-self: center;
-  fill: rgba(var(--text-color), 1);
-  width: 30px;
-  height: 30px;
-  display: block;
-  transition: transform 0.2s; /* Add a transition for smoother scaling */
-}
-
-.addNew {
-  transition: all 0.2s;
-  justify-content: center;
-}
-
-.edit {
-  transition: all 0.2s;
-  align-items: center;
-}
-
-.addNew:hover {
-  background-color: rgba(var(--primary-color), 1);
-  color: rgba(var(--text-color), 1);
-}
-
-#edit-td:last-child > a:hover {
-  transform: scale(1.2); /* Scale the link on hover */
-}
-
-#userPhoto {
-  justify-self: center;
-  margin-left: 50%;
-  align-items: center;
-}
-
-#userPhoto img {
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
-  border: 2px solid rgba(var(--primary-color), 1);
-}
-
-/* New style for hidden elements */
-.hidden-details {
-  justify-content: center;
-  display: none;
-  padding: 10px;
-  margin-top: 5px;
-}
-
-.hidden-details img {
-  width: 300px;
-  height: auto;
-  border-radius: 10px;
-}
-
-.hidden img {
-  width: 300px;
-  height: auto;
-  border-radius: 10px;
-}
-
-#edit-td:last-child {
-  background-color: rgba(var(--primary-color), 1);
-  text-align: center;
-  padding: 0;
-  transition: background-color 0.2s; /* Add a transition for smoother scaling */
-}
-
-#edit-td:last-child > a {
-  display: inline-block;
-  text-decoration: none;
-  width: 100%;
-  height: 100%;
-  transition: transform 0.2s; /* Add a transition for smoother scaling */
-}
-
-#edit-td:last-child > a > svg {
-  fill: rgba(var(--text-color), 1);
-  width: 30px;
-  height: 30px;
-  display: block;
-  margin: 0 auto;
-  transition: transform 0.2s; /* Add a transition for smoother scaling */
-}
-
-table tr{
-  transition: all 0.1s;
-
-}
-
-table tr:hover {
-  background-color: rgba(var(--secondary-color-darker), 80%);
-  color: rgba(var(--text-color), 1);
 }
