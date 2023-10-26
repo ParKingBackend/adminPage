@@ -18,6 +18,8 @@ require('db.php');
 <?php
 $endpoint = '/api/persons/get/all';
 $apiUrl = $apiBaseUrl . $endpoint;
+$delpoint = $apiBaseUrl .'/api/persons/delete/';
+$editpoint = $apiBaseUrl .'/api/persons/update/';
 
 $response = file_get_contents($apiUrl);
 
@@ -109,6 +111,7 @@ for ($i = $startIndex; $i < $endIndex; $i++) {
     echo 'xp: ' . $person['client']['xp'] . '<br>';
     echo '</div>';
     echo '</td>';
+    echo '<td><a href="edit/editpersons.php?id=' . $person['id'] . '">Edit</a> </td>';
     echo '</tr>';
 }
 

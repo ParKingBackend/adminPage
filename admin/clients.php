@@ -76,7 +76,10 @@ require('db.php');
                 echo '<td>' . $client['level'] . '</td>';
                 echo '<td>' . $client['username'] . '</td>';
                 echo '<td>' . $client['xp'] . '</td>';
+                echo '<td><a href="edit/editclients.php?id=' . $client['id'] . '">Edit</a> </td>';
+
                 echo '</tr>';
+
             }
 
             echo '</table>';
