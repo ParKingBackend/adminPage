@@ -54,6 +54,8 @@ echo 'table, th, td { border: 1px solid black; }';
 echo 'th, td { padding: 8px; text-align: left; }';
 echo 'th { background-color: #f2f2f2; }';
 echo 'a { text-decoration: none; color:#333; }';
+echo  '#edit { text-decoration: none; color:#333 !important;  }';
+
 echo '.hidden { display: none; }';
 echo '.pagination { margin-top: 10px; }';
 echo '</style>';
@@ -92,6 +94,7 @@ echo '<th><a href="?sort=id&order=asc">ID &#8593;</a> <a href="?sort=id&order=de
 echo '<th><a href="?sort=firstName&order=asc">First Name &#8593;</a> <a href="?sort=firstName&order=desc">First Name &#8595;</a></th>';
 echo '<th><a href="?sort=surname&order=asc">Surname &#8593;</a> <a href="?sort=surname&order=desc">Surname &#8595;</a></th>';
 echo '<th>Client ID</th>';
+echo '<td><a id="edit" href="add/addpersons.php">Add</a> </td>';
 echo '</tr>';
 
 for ($i = $startIndex; $i < $endIndex; $i++) {

@@ -42,7 +42,7 @@ require('db.php');
             echo 'table, th, td { border: 1px solid black; }';
             echo 'th, td { padding: 8px; text-align: left; }';
             echo 'th { background-color: #f2f2f2; }';
-            echo 'a { text-decoration: none; color:#333; }';
+            echo 'a ,#href{ text-decoration: none; color:#333; }';
             echo '.hidden { display: none; }';
             echo '.pagination { margin-top: 10px; }';
             echo '</style>';
@@ -113,6 +113,7 @@ require('db.php');
                 echo 'xp: ' . $reports['client']['xp'] . '<br>';
                 echo '</div>';
                 echo '</td>';
+                echo '<td><a id="edit" href="edit/editreport.php?id=' . $reports['id'] . '">Edit</a> </td>';
                 echo '</tr>';
             }
             

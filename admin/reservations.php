@@ -42,7 +42,7 @@ require('db.php');
             echo 'table, th, td { border: 1px solid black; }';
             echo 'th, td { padding: 8px; text-align: left; }';
             echo 'th { background-color: #f2f2f2; }';
-            echo 'a { text-decoration: none; color:#333; }';
+            echo 'a,#href { text-decoration: none; color:#333; }';
             echo '.hidden { display: none; }';
             echo '.pagination { margin-top: 10px; }';
             echo '</style>';
@@ -59,7 +59,7 @@ require('db.php');
             
             echo '</head>';
             echo '<body>';
-            echo '<div class="heading"><h1>Reports</h1></div>';
+            echo '<div class="heading"><h1>Reservations</h1></div>';
 
             // Pagination settings
             $itemsPerPage = 10;
@@ -83,6 +83,8 @@ require('db.php');
             echo '<th>End Time</th>';
             echo '<th>Parking ID</th>';
             echo '<th>Client ID</th>';
+            echo '<td><a id="edit" href="add/addreservation.php">Add</a> </td>';
+
 
             echo '</tr>';
 
@@ -113,6 +115,7 @@ require('db.php');
                 echo 'xp: ' . $reserve['client']['xp'] . '<br>';
                 echo '</div>';
                 echo '</td>';
+                echo '<td><a id="edit" href="edit/editreservations.php?id=' . $reserve['id'] . '">Edit</a> </td>';
                 echo '</tr>';
             }
             

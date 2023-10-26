@@ -10,6 +10,31 @@ require('db.php');
     <link rel="stylesheet" type="text/css" href="css/pageLayout.css">
     <link rel="stylesheet" type="text/css" href="css/fonts.css">
 </head>
+<?php
+ echo '<html>';
+ echo '<head>';
+ echo '<style>';
+ echo 'table { border-collapse: collapse; width: 100%; }';
+ echo 'table, th, td { border: 1px solid black; }';
+ echo 'th, td { padding: 8px; text-align: left; }';
+ echo 'th { background-color: #f2f2f2; }';
+ echo '#edit { text-decoration: none; color:#333 !important; }';
+ echo '.hidden { display: none; }';
+ echo '.pagination { margin-top: 10px; }';
+ echo '</style>';
+ echo '<script>';
+ echo 'function toggleDetails(elementId) {';
+ echo '    var element = document.getElementById(elementId);';
+ echo '    if (element.style.display === "none") {';
+ echo '        element.style.display = "block";';
+ echo '    } else {';
+ echo '        element.style.display = "none";';
+ echo '    }';
+ echo '}';
+ echo '</script>';
+ 
+ echo '</head>';
+ ?>
 
 <body>
     <?php include('topBar.php'); ?>
@@ -37,6 +62,8 @@ require('db.php');
             }
 
             echo '<div class="heading"><h1>Clients</h1></div>';
+           
+
 
             // Pagination settings
             $itemsPerPage = 10;
@@ -54,6 +81,7 @@ require('db.php');
 
             // Display the table and pagination links inside a div
             echo '<div class="data-container">';
+
             echo '<table>';
             echo '<tr>';
             echo '<th>ID</th>';
@@ -62,8 +90,8 @@ require('db.php');
             echo '<th>Bank Account</th>';
             echo '<th>Image</th>';
             echo '<th>Level</th>';
-            echo '<th>Username</th>';
             echo '<th>XP</th>';
+            echo '<td><a id="edit" href="add/addclient.php">Add</a> </td>';
             echo '</tr>';
 
             foreach (array_slice($data, $startIndex, $itemsPerPage) as $client) {
@@ -74,9 +102,9 @@ require('db.php');
                 echo '<td>' . $client['bankAccount'] . '</td>';
                 echo '<td> <img src="' . $client['image'] . '" width="50" height="50">' . '</td>';
                 echo '<td>' . $client['level'] . '</td>';
-                echo '<td>' . $client['username'] . '</td>';
                 echo '<td>' . $client['xp'] . '</td>';
-                echo '<td><a href="edit/editclients.php?id=' . $client['id'] . '">Edit</a> </td>';
+                echo '<td><a id="edit" href="edit/editclients.php?id=' . $client['id'] . '">Edit</a> </td>';
+
 
                 echo '</tr>';
 

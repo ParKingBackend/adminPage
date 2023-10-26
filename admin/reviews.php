@@ -59,7 +59,7 @@ require('db.php');
             
             echo '</head>';
             echo '<body>';
-            echo '<div class="heading"><h1>Reports</h1></div>';
+            echo '<div class="heading"><h1>Reviews</h1></div>';
 
             // Pagination settings
             $itemsPerPage = 10;
@@ -119,6 +119,8 @@ require('db.php');
                 echo 'xp: ' . $reserve['client']['xp'] . '<br>';
                 echo '</div>';
                 echo '</td>';
+                echo '<td><a id="edit" href="edit/editreviews.php?id=' . $reserve['id'] . '">Edit</a> </td>';
+
                 echo '</tr>';
             }
             
