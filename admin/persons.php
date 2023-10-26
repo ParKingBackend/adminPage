@@ -55,10 +55,15 @@ echo 'th, td { padding: 8px; text-align: left; }';
 echo 'th { background-color: #f2f2f2; }';
 echo 'a { text-decoration: none; color:#333; }';
 <<<<<<< HEAD
+<<<<<<< HEAD
 echo  '#edit { text-decoration: none; color:#333 !important;  }';
 
 =======
 >>>>>>> 2dc472e... Fixed login, signout works, all data showedsqlnew
+=======
+echo  '#edit { text-decoration: none; color:#333 !important;  }';
+
+>>>>>>> 65bf1d9... put edit and half of add
 echo '.hidden { display: none; }';
 echo '.pagination { margin-top: 10px; }';
 echo '</style>';
@@ -97,7 +102,11 @@ echo '<th><a href="?sort=id&order=asc">ID &#8593;</a> <a href="?sort=id&order=de
 echo '<th><a href="?sort=firstName&order=asc">First Name &#8593;</a> <a href="?sort=firstName&order=desc">First Name &#8595;</a></th>';
 echo '<th><a href="?sort=surname&order=asc">Surname &#8593;</a> <a href="?sort=surname&order=desc">Surname &#8595;</a></th>';
 echo '<th>Client ID</th>';
+<<<<<<< HEAD
 echo '<td class="addNew"><a id="edit" href="add/addpersons.php">Add</a> </td>';
+=======
+echo '<td><a id="edit" href="add/addpersons.php">Add</a> </td>';
+>>>>>>> 65bf1d9... put edit and half of add
 echo '</tr>';
 
 for ($i = $startIndex; $i < $endIndex; $i++) {

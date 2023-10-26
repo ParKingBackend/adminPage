@@ -187,6 +187,7 @@ echo 'table, th, td { border: 1px solid black; }';
 echo 'th, td { padding: 8px; text-align: left; }';
 echo 'th { background-color: #f2f2f2; }';
 echo 'a { text-decoration: none; color:#333; }';
+echo '#edit { text-decoration: none; color:#333 !important; }';
 echo '.hidden { display: none; }';
 echo '.pagination { margin-top: 10px; }';
 echo '</style>';
@@ -200,6 +201,7 @@ echo '    details.style.display = "none";';
 echo '  }';
 echo '}';
 echo '</script>';
+
 echo '</head>';
 echo '<body>';
 echo '<h1>Premium data</h1>';
@@ -225,6 +227,7 @@ echo '<th><a href="?sort=id&order=asc">ID &#8593;</a> <a href="?sort=id&order=de
 echo '<th><a href="?sort=endDate&order=asc">End Date &#8593;</a> <a href="?sort=endDate&order=desc">End Date &#8595;</a></th>';
 echo '<th><a href="?sort=discountAmount&order=asc">Discount Amount &#8593;</a> <a href="?sort=discountAmount&order=desc">Discount Amount &#8595;</a></th>';
 echo '<th>Client ID</th>';
+echo '<td><a id="edit" href="add/addpremium.php">Add</a> </td>';
 echo '</tr>';
 
 for ($i = $startIndex; $i < $endIndex; $i++) {
@@ -236,12 +239,16 @@ for ($i = $startIndex; $i < $endIndex; $i++) {
     echo '<td>';
     echo '<a href="javascript:void(0);" onclick="toggleClientDetails(\'' . $subscription['id'] . '\')">Show Client</a>';
     echo '<div id="' . $subscription['id'] . '" class="hidden">';
-    echo 'Client ID: ' . $subscription['client']['id'] . '<br>';
-    echo 'Username: ' . $subscription['client']['username'] . '<br>';
-    echo 'Email: ' . $subscription['client']['email'] . '<br>';
-    echo 'Image: <img src="' . $subscription['client']['image'] . '" width="50" height="50">' . '<br>';
-    echo 'level: ' . $subscription['client']['level'] . '<br>';
-    echo 'xp: ' . $subscription['client']['xp'] . '<br>';
+    if (isset($subscription['client'])) {
+        echo 'Client ID: ' . $subscription['client']['id'] . '<br>';
+        echo 'Username: ' . $subscription['client']['username'] . '<br>';
+        echo 'Email: ' . $subscription['client']['email'] . '<br>';
+        echo 'Image: <img src="' . $subscription['client']['image'] . '" width="50" height="50">' . '<br>';
+        echo 'level: ' . $subscription['client']['level'] . '<br>';
+        echo 'xp: ' . $subscription['client']['xp'] . '<br>';
+    } else {
+        echo 'Client data not available';
+    }
     echo '</div>';
     echo '</td>';
     echo '<td><a href="edit/editpremiumsubs.php?id=' . $subscription['id'] . '">Edit</a> </td>';

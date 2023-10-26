@@ -40,6 +40,7 @@ if (isset($_POST['create'])) {
     }
 }
 ?>
+<<<<<<< HEAD
 <!DOCTYPE html>
 <html>
 
@@ -83,3 +84,25 @@ if (isset($_POST['create'])) {
 </body>
 
 </html>
+=======
+
+<form method="POST" action="">
+    <div class="data-entry">
+        <label for="username">Username</label>
+        <input type="text" name="username" value="username">
+    </div>
+
+    <div class="data-entry">
+        <label for="password">Password</label>
+        <input type="text" name="password" value="password">
+    </div>
+
+    <div class="data-entry">
+        <label for="email">Email</label>
+        <input type="text" name="email" value="email">
+    </div>
+
+
+    <input type="submit" name="create" value="Update Entry">
+</form>
+>>>>>>> 65bf1d9... put edit and half of add

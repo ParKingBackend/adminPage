@@ -11,6 +11,7 @@ require('db.php');
     <link rel="stylesheet" type="text/css" href="css/fonts.css">
 </head>
 <?php
+<<<<<<< HEAD
 echo '<html>';
 echo '<head>';
 echo '<style>';
@@ -35,6 +36,32 @@ echo '</script>';
 
 echo '</head>';
 ?>
+=======
+ echo '<html>';
+ echo '<head>';
+ echo '<style>';
+ echo 'table { border-collapse: collapse; width: 100%; }';
+ echo 'table, th, td { border: 1px solid black; }';
+ echo 'th, td { padding: 8px; text-align: left; }';
+ echo 'th { background-color: #f2f2f2; }';
+ echo '#edit { text-decoration: none; color:#333 !important; }';
+ echo '.hidden { display: none; }';
+ echo '.pagination { margin-top: 10px; }';
+ echo '</style>';
+ echo '<script>';
+ echo 'function toggleDetails(elementId) {';
+ echo '    var element = document.getElementById(elementId);';
+ echo '    if (element.style.display === "none") {';
+ echo '        element.style.display = "block";';
+ echo '    } else {';
+ echo '        element.style.display = "none";';
+ echo '    }';
+ echo '}';
+ echo '</script>';
+ 
+ echo '</head>';
+ ?>
+>>>>>>> 65bf1d9... put edit and half of add
 
 <body>
     <?php include('topBar.php'); ?>
@@ -62,6 +89,8 @@ echo '</head>';
             }
 
             echo '<div class="heading"><h1>Clients</h1></div>';
+           
+
 
 <<<<<<< HEAD
 
@@ -94,12 +123,17 @@ echo '</head>';
             echo '<th>Image</th>';
             echo '<th>Level</th>';
 <<<<<<< HEAD
+<<<<<<< HEAD
             echo '<th>XP</th>';
             echo '<td class="addNew"><a id="edit" href="add/addclient.php">Add</a> </td>';
 =======
             echo '<th>Username</th>';
             echo '<th>XP</th>';
 >>>>>>> 2dc472e... Fixed login, signout works, all data showedsqlnew
+=======
+            echo '<th>XP</th>';
+            echo '<td><a id="edit" href="add/addclient.php">Add</a> </td>';
+>>>>>>> 65bf1d9... put edit and half of add
             echo '</tr>';
 
             foreach (array_slice($data, $startIndex, $itemsPerPage) as $client) {
@@ -119,12 +153,16 @@ echo '</head>';
 =======
                 echo '<td> <img src="' . $client['image'] . '" width="50" height="50">' . '</td>';
                 echo '<td>' . $client['level'] . '</td>';
-                echo '<td>' . $client['username'] . '</td>';
                 echo '<td>' . $client['xp'] . '</td>';
+<<<<<<< HEAD
 <<<<<<< HEAD
 >>>>>>> 2dc472e... Fixed login, signout works, all data showedsqlnew
 =======
                 echo '<td><a href="edit/editclients.php?id=' . $client['id'] . '">Edit</a> </td>';
+=======
+                echo '<td><a id="edit" href="edit/editclients.php?id=' . $client['id'] . '">Edit</a> </td>';
+
+>>>>>>> 65bf1d9... put edit and half of add
 
 >>>>>>> 12e5de8... updated some shit
                 echo '</tr>';

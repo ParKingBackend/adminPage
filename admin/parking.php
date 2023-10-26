@@ -11,6 +11,9 @@ require('db.php');
     <link rel="stylesheet" type="text/css" href="css/fonts.css">
 </head>
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 65bf1d9... put edit and half of add
 <?php
  echo '<html>';
  echo '<head>';
@@ -36,9 +39,12 @@ require('db.php');
  
  echo '</head>';
  ?>
+<<<<<<< HEAD
 =======
 
 >>>>>>> 2dc472e... Fixed login, signout works, all data showedsqlnew
+=======
+>>>>>>> 65bf1d9... put edit and half of add
 <body>
     <?php include('topBar.php'); ?>
     <div class="grid-container">
@@ -65,10 +71,14 @@ require('db.php');
             }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
             echo '<div class="heading"><h1>Parking</h1></div>';
 =======
             echo '<div class="heading"><h1>Clients</h1></div>';
 >>>>>>> 2dc472e... Fixed login, signout works, all data showedsqlnew
+=======
+            echo '<div class="heading"><h1>Parking</h1></div>';
+>>>>>>> 65bf1d9... put edit and half of add
 
             // Pagination settings
             $itemsPerPage = 10;
@@ -97,11 +107,17 @@ require('db.php');
             echo '<th>Price</th>';
             echo '<th>Spots taken</th>';
 <<<<<<< HEAD
+<<<<<<< HEAD
             echo '<th>End time</th>';
             echo '<th>Start time</th>';
             echo '<td><a id="edit" href="add/addparking.php">Add</a> </td>';
 =======
 >>>>>>> 2dc472e... Fixed login, signout works, all data showedsqlnew
+=======
+            echo '<th>End time</th>';
+            echo '<th>Start time</th>';
+            echo '<td><a id="edit" href="add/addparking.php">Add</a> </td>';
+>>>>>>> 65bf1d9... put edit and half of add
             echo '</tr>';
 
             foreach (array_slice($data, $startIndex, $itemsPerPage) as $parking) {
@@ -115,11 +131,17 @@ require('db.php');
                 echo '<td>' . $parking['price'] . '</td>';
                 echo '<td>' . $parking['spotsTaken'] . '</td>';
 <<<<<<< HEAD
+<<<<<<< HEAD
                 echo '<td>' . $parking['endTime'] . '</td>';
                 echo '<td>' . $parking['startTime'] . '</td>';
                 echo '<td><a id="edit" href="edit/editparking.php?id=' . $parking['id'] . '">Edit</a> </td>';
 =======
 >>>>>>> 2dc472e... Fixed login, signout works, all data showedsqlnew
+=======
+                echo '<td>' . $parking['endTime'] . '</td>';
+                echo '<td>' . $parking['startTime'] . '</td>';
+                echo '<td><a id="edit" href="edit/editparking.php?id=' . $parking['id'] . '">Edit</a> </td>';
+>>>>>>> 65bf1d9... put edit and half of add
                 echo '</tr>';
             }
 
