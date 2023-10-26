@@ -1,0 +1,95 @@
+:root {
+  --primary-color: 254, 143, 78;
+  --secondary-color: 58, 39, 39;
+  --secondary-color-darker: 208, 199, 193;
+  --text-color: 246, 245, 244;
+  --background-color: 14, 12, 12;
+  --accent-color: 115, 117, 125;
+  --danger-color: 254, 78, 78;
+  --gradient: linear-gradient(45deg, rgba(var(--primary-color), 1) 0%, #C03535 100%);
+
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(var(--background-color), 1);
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  width: auto;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(var(--background-color), 1);
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  width: auto;
+}
+
+.cardContainer {
+  background-color: rgba(var(--background-color), 1);
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  row-gap: 3.4rem;
+  column-gap: 2rem;
+  width: 80%;
+  height: auto;
+  align-items: center;
+  padding: 1rem;
+  padding-top: 2rem;
+  border-radius: 5px;
+}
+
+.card {
+  background-color: rgba(var(--secondary-color), 1);
+  border-radius: 10px;
+  height: 100%;
+  text-align: center;
+  transition: all 0.1s ease-in-out;
+  border: 0.7rem solid rgba(var(--secondary-color-darker), 1);
+}
+
+.card:hover {
+  background: var(--gradient);
+border: none;
+  scale: 1.1;
+}
+
+.card:hover svg {
+  fill: rgba(var(--secondary-color), 1);
+}
+
+.card:hover a {
+  color: rgba(var(--secondary-color), 1);
+}
+
+.card a {
+  border-radius: 5px;
+  text-decoration: none;
+  color: rgba(var(--text-color), 1);
+  display: block;
+  padding: 10px;
+}
+
+svg {
+  width: 40%;
+  height: auto;
+  margin: 2rem;
+  fill: rgba(var(--secondary-color-darker), 1);
+  transition: all 0.2s ease-in-out;
+}
+
+a {
+  transition: all 0.2s ease-in-out;
+  margin: 0;
+}
+

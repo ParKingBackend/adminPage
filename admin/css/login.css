@@ -1,0 +1,153 @@
+:root {
+  --primary-color: 254, 143, 78;
+  --secondary-color: 58, 39, 39;
+  --secondary-color-darker: 208, 199, 193;
+  --text-color: 246, 245, 244;
+  --background-color: 14, 12, 12;
+  --accent-color: 115, 117, 125;
+  --danger-color: 254, 78, 78;
+  --gradient: linear-gradient(
+    45deg,
+    rgba(var(--primary-color), 1) 0%,
+    #c03535 100%
+  );
+}
+
+:root{
+  font-family: "Inter", sans-serif;
+
+  --h1-font-size: 3rem;
+  --h1-font-weight: 700;
+  --h1-line-height: 3.5rem;
+
+  --h2-font-size: 2rem;
+  --h2-font-weight: 700;
+  --h2-line-height: 2.5rem;
+
+  --h3-font-size: 1.5rem;
+  --h3-font-weight: 400;
+  --h3-line-height: 2rem;
+
+  --normal-font-size: 1.125rem;
+  --normal-font-weight: 400;
+
+  --sub-font-size: 1rem;
+  --sub-font-weight: 400;
+
+  --button-font-size: 1.125rem;
+  --button-font-weight: 400;
+
+}
+
+h1{
+  font-size: var(--h1-font-size);
+  font-weight: var(--h1-font-weight);
+  line-height: var(--h1-line-height);
+}
+
+h2{
+  font-size: var(--h2-font-size);
+  font-weight: var(--h2-font-weight);
+  line-height: var(--h2-line-height);
+}
+
+h3{
+  font-size: var(--h3-font-size);
+  font-weight: var(--h3-font-weight);
+  line-height: var(--h3-line-height);
+}
+
+p, div{
+  font-size: var(--normal-font-size);
+  font-weight: var(--normal-font-weight);
+}
+
+span{
+  font-size: var(--sub-font-size);
+  font-weight: var(--sub-font-weight);
+}
+
+button{
+  font-size: var(--button-font-size);
+  font-weight: var(--button-font-weight);
+}
+
+
+body {
+  background-color: rgba(var(--background-color), 1);
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  height: 100vh;
+}
+
+
+.container {
+  background: var(--gradient);
+  width: 40%;
+  height: 60%;
+  border-radius: 10px;
+  align-self: center;
+  margin-bottom: 10%;
+}
+
+
+form {
+  margin-top: 20px;
+  text-align: center;
+}
+
+input[type="text"], input[type="password"] {
+  background-color: rgba(var(--secondary-color-darker), 1);
+  border: none ;
+  border-radius: 10px;
+  display: block;
+  font-size: 16px;
+  margin: 0 auto;
+  padding: 10px;
+  width: 80%;
+  margin: 1rem auto;
+}
+
+input[type="text"]:focus, input[type="password"]:focus {
+  outline: 2px solid rgba(var(--secondary-color), 1);
+}
+
+#administration{
+  margin: 0;
+  font-style: italic;
+  font-size: smaller;
+}
+
+
+.btn {
+  background-color: rgba(var(--secondary-color-darker), 1);
+  border: 1px solid rgba(var(--secondary-color), 1);
+  border-radius: 10px;
+  color: #fff;
+  cursor: pointer;
+  display: inline-block;
+  font-size: 16px;
+  padding: 10px 20px;
+  text-align: center;
+  width: 40%;
+  transition: all 0.2s ease-in-out;
+}
+
+.btn:hover {
+  background-color: rgba(var(--secondary-color), 1);
+  scale: 1.05;
+}
+
+img {
+  margin: 1rem;
+  margin-bottom: 0;
+  width: 50%;
+  height: auto;
+  align-self: center;
+}
+
