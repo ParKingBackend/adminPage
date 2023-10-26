@@ -19,10 +19,14 @@
                     fill="#000000" />
             </svg>
 <<<<<<< HEAD
+<<<<<<< HEAD
             <a href="../index.php">Sign out</a>
 =======
             <p>Sign out</p>
 >>>>>>> ae8cc7d... Created design for mainPage and Clients
+=======
+            <a href="../index.php">Sign out</a>
+>>>>>>> 2dc472e... Fixed login, signout works, all data showedsqlnew
         </button>
     </div>
 

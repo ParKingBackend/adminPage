@@ -63,8 +63,11 @@ echo '</head>';
 
             echo '<div class="heading"><h1>Clients</h1></div>';
 
+<<<<<<< HEAD
 
 
+=======
+>>>>>>> 2dc472e... Fixed login, signout works, all data showedsqlnew
             // Pagination settings
             $itemsPerPage = 10;
             $totalItems = count($data);
@@ -90,8 +93,13 @@ echo '</head>';
             echo '<th>Bank Account</th>';
             echo '<th>Image</th>';
             echo '<th>Level</th>';
+<<<<<<< HEAD
             echo '<th>XP</th>';
             echo '<td class="addNew"><a id="edit" href="add/addclient.php">Add</a> </td>';
+=======
+            echo '<th>Username</th>';
+            echo '<th>XP</th>';
+>>>>>>> 2dc472e... Fixed login, signout works, all data showedsqlnew
             echo '</tr>';
 
             foreach (array_slice($data, $startIndex, $itemsPerPage) as $client) {
@@ -100,6 +108,7 @@ echo '</head>';
                 echo '<td>' . $client['username'] . '</td>';
                 echo '<td>' . $client['email'] . '</td>';
                 echo '<td>' . $client['bankAccount'] . '</td>';
+<<<<<<< HEAD
                 echo '<td id="userPhoto"> <img src="' . $client['image'] . '" width="50" height="50">' . '</td>';
                 echo '<td>' . $client['level'] . '</td>';
                 echo '<td>' . $client['xp'] . '</td>';
@@ -107,6 +116,12 @@ echo '</head>';
 
 
 
+=======
+                echo '<td> <img src="' . $client['image'] . '" width="50" height="50">' . '</td>';
+                echo '<td>' . $client['level'] . '</td>';
+                echo '<td>' . $client['username'] . '</td>';
+                echo '<td>' . $client['xp'] . '</td>';
+>>>>>>> 2dc472e... Fixed login, signout works, all data showedsqlnew
                 echo '</tr>';
 
             }

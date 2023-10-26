@@ -54,8 +54,11 @@ echo 'table, th, td { border: 1px solid black; }';
 echo 'th, td { padding: 8px; text-align: left; }';
 echo 'th { background-color: #f2f2f2; }';
 echo 'a { text-decoration: none; color:#333; }';
+<<<<<<< HEAD
 echo  '#edit { text-decoration: none; color:#333 !important;  }';
 
+=======
+>>>>>>> 2dc472e... Fixed login, signout works, all data showedsqlnew
 echo '.hidden { display: none; }';
 echo '.pagination { margin-top: 10px; }';
 echo '</style>';
