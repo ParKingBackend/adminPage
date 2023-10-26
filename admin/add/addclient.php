@@ -41,6 +41,7 @@ if (isset($_POST['create'])) {
 }
 ?>
 <<<<<<< HEAD
+<<<<<<< HEAD
 <!DOCTYPE html>
 <html>
 
@@ -85,6 +86,8 @@ if (isset($_POST['create'])) {
 
 </html>
 =======
+=======
+>>>>>>> 28d2c43d323f0e921f17cf3e3f32fd70a68b14be
 
 <form method="POST" action="">
     <div class="data-entry">
@@ -105,4 +108,7 @@ if (isset($_POST['create'])) {
 
     <input type="submit" name="create" value="Update Entry">
 </form>
+<<<<<<< HEAD
 >>>>>>> 65bf1d9... put edit and half of add
+=======
+>>>>>>> 28d2c43d323f0e921f17cf3e3f32fd70a68b14be

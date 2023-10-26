@@ -36,12 +36,16 @@ if (isset($_POST['update'])) {
         'isPremium' => $_POST['isPremium'] == "true" ? true : false,
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 28d2c43d323f0e921f17cf3e3f32fd70a68b14be
         'partnerId' => $_POST['partnerId'],
         'maxSpotsCount' => $_POST['maxSpotsCount'],
         'spotsTaken' => $_POST['spotsTaken'],
         'isDisabled' => $_POST['isDisabled'] == "true" ? true : false,
         'endTime' => $_POST['endTime'],
         'startTime' => $_POST['startTime']
+<<<<<<< HEAD
 =======
         'partnerId' => (int)$_POST['partnerId'],
         'maxSpotsCount' => (int)$_POST['maxSpotsCount'],
@@ -58,6 +62,8 @@ if (isset($_POST['update'])) {
         'endTime' => $_POST['endTime'],
         'startTime' => $_POST['startTime']
 >>>>>>> 28d2c43... done without edit/add design
+=======
+>>>>>>> 28d2c43d323f0e921f17cf3e3f32fd70a68b14be
     ];
 
     // Send a PUT request to update the entry
@@ -82,8 +88,11 @@ if (isset($_POST['update'])) {
 ?>
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> 28d2c43... done without edit/add design
+=======
+>>>>>>> 28d2c43d323f0e921f17cf3e3f32fd70a68b14be
 <!DOCTYPE html>
 <html>
 
@@ -105,6 +114,9 @@ if (isset($_POST['update'])) {
             <div class="form-row">
                 <div class="label-column">
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 28d2c43d323f0e921f17cf3e3f32fd70a68b14be
         <label for="address">Address</label>
         <label for="price">Price</label>
         <label for="isPremium">Is Premium</label>
@@ -120,6 +132,7 @@ if (isset($_POST['update'])) {
 
         <input type="text" name="price" value="<?php echo $data['price']; ?>">
 
+<<<<<<< HEAD
 =======
 
 <form method="POST" action="">
@@ -147,12 +160,17 @@ if (isset($_POST['update'])) {
 >>>>>>> 65bf1d9... put edit and half of add
 =======
 >>>>>>> 28d2c43... done without edit/add design
+=======
+>>>>>>> 28d2c43d323f0e921f17cf3e3f32fd70a68b14be
         <select name="isPremium">
             <option value="true" <?php if ($data['isPremium']) echo 'selected'; ?>>True</option>
             <option value="false" <?php if (!$data['isPremium']) echo 'selected'; ?>>False</option>
         </select>
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 28d2c43d323f0e921f17cf3e3f32fd70a68b14be
 
         <input type="text" name="partnerId" value="<?php echo $data['partnerId']; ?>">
 
@@ -160,6 +178,7 @@ if (isset($_POST['update'])) {
 
         <input type="text" name="spotsTaken" value="<?php echo $data['spotsTaken']; ?>">
 
+<<<<<<< HEAD
 =======
     </div>
 =======
@@ -177,10 +196,13 @@ if (isset($_POST['update'])) {
 >>>>>>> 65bf1d9... put edit and half of add
 =======
 >>>>>>> 28d2c43... done without edit/add design
+=======
+>>>>>>> 28d2c43d323f0e921f17cf3e3f32fd70a68b14be
         <select name="isDisabled">
             <option value="true" <?php if ($data['isDisabled']) echo 'selected'; ?>>True</option>
             <option value="false" <?php if (!$data['isDisabled']) echo 'selected'; ?>>False</option>
         </select>
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 
@@ -206,6 +228,9 @@ if (isset($_POST['update'])) {
 =======
 
 >>>>>>> 28d2c43... done without edit/add design
+=======
+
+>>>>>>> 28d2c43d323f0e921f17cf3e3f32fd70a68b14be
         <input type="text" name="endTime" value="<?php echo $data['endTime']; ?>">
 
         <input type="text" name="startTime" value="<?php echo $data['startTime']; ?>">
@@ -215,8 +240,11 @@ if (isset($_POST['update'])) {
     <input type="submit" name="update" value="Update Entry">
 </form>
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> 65bf1d9... put edit and half of add
 =======
+=======
+>>>>>>> 28d2c43d323f0e921f17cf3e3f32fd70a68b14be
 </div>
 
 
@@ -224,4 +252,7 @@ if (isset($_POST['update'])) {
 </body>
 
 </html>
+<<<<<<< HEAD
 >>>>>>> 28d2c43... done without edit/add design
+=======
+>>>>>>> 28d2c43d323f0e921f17cf3e3f32fd70a68b14be

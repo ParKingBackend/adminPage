@@ -14,12 +14,16 @@ if (isset($_POST['create'])) {
     $isPremium = $_POST['isPremium'] == "true" ? true : false;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 28d2c43d323f0e921f17cf3e3f32fd70a68b14be
     $partnerId = $_POST['partnerId'];
     $maxSpotsCount = $_POST['maxSpotsCount'];
     $spotsTaken = $_POST['spotsTaken'];
     $isDisabled = $_POST['isDisabled'] == "true" ? true : false;
     $startTime = $_POST['startTime'];
     $endTime = $_POST['endTime'];
+<<<<<<< HEAD
 =======
     $partnerId = (int)$_POST['partnerId'];
     $maxSpotsCount = (int)$_POST['maxSpotsCount'];
@@ -36,6 +40,8 @@ if (isset($_POST['create'])) {
     $startTime = $_POST['startTime'];
     $endTime = $_POST['endTime'];
 >>>>>>> 28d2c43... done without edit/add design
+=======
+>>>>>>> 28d2c43d323f0e921f17cf3e3f32fd70a68b14be
 
     // Prepare the data to send to the API
     $postData = [

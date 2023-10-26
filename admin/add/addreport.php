@@ -1,5 +1,8 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> 28d2c43d323f0e921f17cf3e3f32fd70a68b14be
 <?php
 require('../db.php');
 
@@ -91,6 +94,7 @@ if (isset($_POST['create'])) {
 }
 ?>
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 >>>>>>> 65bf1d9... put edit and half of add
 <!DOCTYPE html>
@@ -307,6 +311,8 @@ if (isset($_POST['create'])) {
             </form>
         </div>
 =======
+=======
+>>>>>>> 28d2c43d323f0e921f17cf3e3f32fd70a68b14be
 <form method="POST" action="">
 
     <div class="data-entry">
@@ -335,6 +341,7 @@ if (isset($_POST['create'])) {
             }
             ?>
         </select>
+<<<<<<< HEAD
 >>>>>>> 28d2c43... done without edit/add design
     </div>
 
@@ -345,3 +352,9 @@ if (isset($_POST['create'])) {
     <input type="submit" name="create" value="Create Entry">
 </form>
 >>>>>>> 28d2c43... done without edit/add design
+=======
+    </div>
+
+    <input type="submit" name="create" value="Create Entry">
+</form>
+>>>>>>> 28d2c43d323f0e921f17cf3e3f32fd70a68b14be

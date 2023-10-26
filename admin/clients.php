@@ -12,6 +12,7 @@ require('db.php');
 </head>
 <?php
 <<<<<<< HEAD
+<<<<<<< HEAD
 echo '<html>';
 echo '<head>';
 echo '<style>';
@@ -37,6 +38,8 @@ echo '</script>';
 echo '</head>';
 ?>
 =======
+=======
+>>>>>>> 28d2c43d323f0e921f17cf3e3f32fd70a68b14be
  echo '<html>';
  echo '<head>';
  echo '<style>';
@@ -61,7 +64,10 @@ echo '</head>';
  
  echo '</head>';
  ?>
+<<<<<<< HEAD
 >>>>>>> 65bf1d9... put edit and half of add
+=======
+>>>>>>> 28d2c43d323f0e921f17cf3e3f32fd70a68b14be
 
 <body>
     <?php include('topBar.php'); ?>
@@ -93,10 +99,13 @@ echo '</head>';
 
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 
 =======
 >>>>>>> 2dc472e... Fixed login, signout works, all data showedsqlnew
+=======
+>>>>>>> 28d2c43d323f0e921f17cf3e3f32fd70a68b14be
             // Pagination settings
             $itemsPerPage = 10;
             $totalItems = count($data);
@@ -124,6 +133,7 @@ echo '</head>';
             echo '<th>Level</th>';
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
             echo '<th>XP</th>';
             echo '<td class="addNew"><a id="edit" href="add/addclient.php">Add</a> </td>';
 =======
@@ -134,6 +144,10 @@ echo '</head>';
             echo '<th>XP</th>';
             echo '<td><a id="edit" href="add/addclient.php">Add</a> </td>';
 >>>>>>> 65bf1d9... put edit and half of add
+=======
+            echo '<th>XP</th>';
+            echo '<td><a id="edit" href="add/addclient.php">Add</a> </td>';
+>>>>>>> 28d2c43d323f0e921f17cf3e3f32fd70a68b14be
             echo '</tr>';
 
             foreach (array_slice($data, $startIndex, $itemsPerPage) as $client) {
@@ -142,6 +156,7 @@ echo '</head>';
                 echo '<td>' . $client['username'] . '</td>';
                 echo '<td>' . $client['email'] . '</td>';
                 echo '<td>' . $client['bankAccount'] . '</td>';
+<<<<<<< HEAD
 <<<<<<< HEAD
                 echo '<td id="userPhoto"> <img src="' . $client['image'] . '" width="50" height="50">' . '</td>';
                 echo '<td>' . $client['level'] . '</td>';
@@ -165,6 +180,14 @@ echo '</head>';
 >>>>>>> 65bf1d9... put edit and half of add
 
 >>>>>>> 12e5de8... updated some shit
+=======
+                echo '<td> <img src="' . $client['image'] . '" width="50" height="50">' . '</td>';
+                echo '<td>' . $client['level'] . '</td>';
+                echo '<td>' . $client['xp'] . '</td>';
+                echo '<td><a id="edit" href="edit/editclients.php?id=' . $client['id'] . '">Edit</a> </td>';
+
+
+>>>>>>> 28d2c43d323f0e921f17cf3e3f32fd70a68b14be
                 echo '</tr>';
 
             }

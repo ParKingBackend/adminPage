@@ -1,5 +1,6 @@
 .top {
 <<<<<<< HEAD
+<<<<<<< HEAD
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -77,6 +78,8 @@ table tr:hover {
 background-color: rgba(var(--secondary-color-darker), 80%);
 }
 =======
+=======
+>>>>>>> 28d2c43d323f0e921f17cf3e3f32fd70a68b14be
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -133,5 +136,9 @@ background-color: rgba(var(--secondary-color-darker), 80%);
     margin: 0;
     padding: 0px;
     
+<<<<<<< HEAD
   }
 >>>>>>> ae8cc7d... Created design for mainPage and Clients
+=======
+  }
+>>>>>>> 28d2c43d323f0e921f17cf3e3f32fd70a68b14be

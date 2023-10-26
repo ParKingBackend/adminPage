@@ -1,7 +1,10 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> 28d2c43... done without edit/add design
+=======
+>>>>>>> 28d2c43d323f0e921f17cf3e3f32fd70a68b14be
 <!DOCTYPE html>
 <html>
 
@@ -65,6 +68,7 @@
 </body>
 
 </html>
+<<<<<<< HEAD
 <<<<<<< HEAD
 =======
 
@@ -146,3 +150,5 @@ $password =   $_POST['password'];
 >>>>>>> 2dc472e... Fixed login, signout works, all data showedsqlnew
 =======
 >>>>>>> 28d2c43... done without edit/add design
+=======
+>>>>>>> 28d2c43d323f0e921f17cf3e3f32fd70a68b14be

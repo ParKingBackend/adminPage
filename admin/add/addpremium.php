@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 <!DOCTYPE html>
 <html>
 
@@ -117,6 +118,8 @@
 
 </html>
 =======
+=======
+>>>>>>> 28d2c43d323f0e921f17cf3e3f32fd70a68b14be
 <?php
 require('../db.php');
 
@@ -215,4 +218,7 @@ if (isset($_POST['create'])) {
 
     <input type="submit" name="create" value="Create Entry">
 </form>
+<<<<<<< HEAD
 >>>>>>> 65bf1d9... put edit and half of add
+=======
+>>>>>>> 28d2c43d323f0e921f17cf3e3f32fd70a68b14be

@@ -1,11 +1,16 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 
 >>>>>>> 12e5de8... updated some shit
+=======
+
+>>>>>>> 28d2c43d323f0e921f17cf3e3f32fd70a68b14be
 <?php
 require('../db.php');
 ?>
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <!DOCTYPE html>
 <html>
@@ -92,6 +97,8 @@ require('../db.php');
 
 </html>
 =======
+=======
+>>>>>>> 28d2c43d323f0e921f17cf3e3f32fd70a68b14be
 <?php
 if (isset($_GET['id'])) {
     $entryId = $_GET['id'];
@@ -158,5 +165,9 @@ if (isset($_POST['update'])) {
     </div>
 
     <input type="submit" name="update" value="Update Entry">
+<<<<<<< HEAD
 </form>
 >>>>>>> 12e5de8... updated some shit
+=======
+</form>
+>>>>>>> 28d2c43d323f0e921f17cf3e3f32fd70a68b14be

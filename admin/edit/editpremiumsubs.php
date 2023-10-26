@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 <!DOCTYPE html>
 <html>
 
@@ -90,6 +91,8 @@
 
 </html>
 =======
+=======
+>>>>>>> 28d2c43d323f0e921f17cf3e3f32fd70a68b14be
 <?php
 require('../db.php');
 ?>
@@ -160,5 +163,9 @@ if (isset($_POST['update'])) {
     </div>
 
     <input type="submit" name="update" value="Update Entry">
+<<<<<<< HEAD
 </form>
 >>>>>>> 12e5de8... updated some shit
+=======
+</form>
+>>>>>>> 28d2c43d323f0e921f17cf3e3f32fd70a68b14be

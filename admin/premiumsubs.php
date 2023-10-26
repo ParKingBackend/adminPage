@@ -3,9 +3,12 @@ require('db.php');
 
 ?>
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 =======
 >>>>>>> 2dc472e... Fixed login, signout works, all data showedsqlnew
+=======
+>>>>>>> 28d2c43d323f0e921f17cf3e3f32fd70a68b14be
 <head>
     <link rel="stylesheet" type="text/css" href="css/admin.css">
     <link rel="stylesheet" type="text/css" href="css/pageLayout.css">
@@ -19,6 +22,7 @@ require('db.php');
             <?php include('sideMenu.php'); ?>
         </div>
         <div class="content">
+<<<<<<< HEAD
 <<<<<<< HEAD
             <?php
             $endpoint = '/api/subscription/get/all'; // Adjust the endpoint as needed
@@ -149,6 +153,8 @@ require('db.php');
             echo '</html>';
             ?>
 =======
+=======
+>>>>>>> 28d2c43d323f0e921f17cf3e3f32fd70a68b14be
 <?php
 $endpoint = '/api/subscription/get/all'; // Adjust the endpoint as needed
 $apiUrl = $apiBaseUrl . $endpoint;
@@ -273,7 +279,10 @@ echo '</div>';
 echo '</body>';
 echo '</html>';
 ?>
+<<<<<<< HEAD
 >>>>>>> 2dc472e... Fixed login, signout works, all data showedsqlnew
+=======
+>>>>>>> 28d2c43d323f0e921f17cf3e3f32fd70a68b14be
         </div>
     </div>
 </body>

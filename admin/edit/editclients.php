@@ -61,8 +61,11 @@ if (isset($_POST['update'])) {
 ?>
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> 28d2c43... done without edit/add design
+=======
+>>>>>>> 28d2c43d323f0e921f17cf3e3f32fd70a68b14be
 <!DOCTYPE html>
 <html>
 
@@ -102,6 +105,9 @@ if (isset($_POST['update'])) {
                 </div>
             </div>
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 28d2c43d323f0e921f17cf3e3f32fd70a68b14be
 
     <input type="submit" name="update" value="Update Entry">
 </form>
@@ -111,6 +117,7 @@ if (isset($_POST['update'])) {
 
 </body>
 
+<<<<<<< HEAD
 </html>
 =======
 
@@ -165,3 +172,6 @@ if (isset($_POST['update'])) {
 
 </html>
 >>>>>>> 28d2c43... done without edit/add design
+=======
+</html>
+>>>>>>> 28d2c43d323f0e921f17cf3e3f32fd70a68b14be

@@ -146,6 +146,7 @@
     padding: 0.5rem;
   }
 <<<<<<< HEAD
+<<<<<<< HEAD
 
   input[type="number"]{
     width: 90%;
@@ -162,6 +163,10 @@
   
   input[type="text"] {
 >>>>>>> 28d2c43... done without edit/add design
+=======
+  
+  input[type="text"] {
+>>>>>>> 28d2c43d323f0e921f17cf3e3f32fd70a68b14be
     width: 90%;
     padding: 0.5rem;
     margin: 1rem;
@@ -177,6 +182,7 @@
     background-color: rgba(var(--secondary-color-darker), 1);
   }
   
+<<<<<<< HEAD
 <<<<<<< HEAD
   .select{
     width: 93%;
@@ -197,6 +203,8 @@
 
 =======
 >>>>>>> 28d2c43... done without edit/add design
+=======
+>>>>>>> 28d2c43d323f0e921f17cf3e3f32fd70a68b14be
   input[type="submit"] {
     margin-top: 1rem;
     padding: 1rem;

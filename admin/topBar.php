@@ -20,6 +20,7 @@
             </svg>
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
             <a href="../index.php">Sign out</a>
 =======
             <p>Sign out</p>
@@ -27,6 +28,9 @@
 =======
             <a href="../index.php">Sign out</a>
 >>>>>>> 2dc472e... Fixed login, signout works, all data showedsqlnew
+=======
+            <a href="../index.php">Sign out</a>
+>>>>>>> 28d2c43d323f0e921f17cf3e3f32fd70a68b14be
         </button>
     </div>
 

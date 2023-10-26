@@ -8,6 +8,7 @@ if (isset($_GET['id'])) {
 
 } else {
 <<<<<<< HEAD
+<<<<<<< HEAD
     echo "Service broken, no ID";
 }
 $endpoint = '/api/companies/get/all';
@@ -17,6 +18,8 @@ $delpoint = $apiBaseUrl . '/api/companies/delete/';
 $editpoint = $apiBaseUrl . '/api/companies/' . $entryId . '';
 $updatepoint = $apiBaseUrl . '/api/companies/update/' . $entryId . '';
 =======
+=======
+>>>>>>> 28d2c43d323f0e921f17cf3e3f32fd70a68b14be
    echo "Service broken, no ID";
 }
 $endpoint = '/api/companies/get/all';
@@ -25,11 +28,15 @@ $delpoint = $apiBaseUrl .'/api/companies/delete/';
 
 $editpoint = $apiBaseUrl .'/api/companies/'.$entryId.'';
 <<<<<<< HEAD
+<<<<<<< HEAD
 $updatepoint = $apiBaseUrl .'/api/companies/edit/'.$entryId.'';
 >>>>>>> 12e5de8... updated some shit
 =======
 $updatepoint = $apiBaseUrl .'/api/companies/update/'.$entryId.'';
 >>>>>>> 28d2c43... done without edit/add design
+=======
+$updatepoint = $apiBaseUrl .'/api/companies/update/'.$entryId.'';
+>>>>>>> 28d2c43d323f0e921f17cf3e3f32fd70a68b14be
 
 $response = file_get_contents($editpoint);
 
@@ -73,8 +80,11 @@ if (isset($_POST['update'])) {
 ?>
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> 28d2c43... done without edit/add design
+=======
+>>>>>>> 28d2c43d323f0e921f17cf3e3f32fd70a68b14be
 <!DOCTYPE html>
 <html>
 
@@ -91,6 +101,7 @@ if (isset($_POST['update'])) {
 <body>
 
     <div class="container">
+<<<<<<< HEAD
 <<<<<<< HEAD
         <h1>Edit Company</h1>
         <form method="POST" action="">
@@ -116,11 +127,16 @@ if (isset($_POST['update'])) {
 <form method="POST" action="">
     <div class="data-entry">
 =======
+=======
+>>>>>>> 28d2c43d323f0e921f17cf3e3f32fd70a68b14be
         <h1>Edit Client</h1>
         <form method="POST" action="">
             <div class="form-row">
     <div class="label-column">
+<<<<<<< HEAD
 >>>>>>> 28d2c43... done without edit/add design
+=======
+>>>>>>> 28d2c43d323f0e921f17cf3e3f32fd70a68b14be
         <label for="compName">compName</label>
         <label for="bio">bio</label>
        
@@ -134,13 +150,20 @@ if (isset($_POST['update'])) {
     <input type="submit" name="update" value="Update Entry">
 </form>
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> 12e5de8... updated some shit
 =======
+=======
+>>>>>>> 28d2c43d323f0e921f17cf3e3f32fd70a68b14be
 </div>
 
 
 
 </body>
 
+<<<<<<< HEAD
 </html>
 >>>>>>> 28d2c43... done without edit/add design
+=======
+</html>
+>>>>>>> 28d2c43d323f0e921f17cf3e3f32fd70a68b14be
