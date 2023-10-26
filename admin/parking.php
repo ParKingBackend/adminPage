@@ -10,7 +10,31 @@ require('db.php');
     <link rel="stylesheet" type="text/css" href="css/pageLayout.css">
     <link rel="stylesheet" type="text/css" href="css/fonts.css">
 </head>
-
+<?php
+ echo '<html>';
+ echo '<head>';
+ echo '<style>';
+ echo 'table { border-collapse: collapse; width: 100%; }';
+ echo 'table, th, td { border: 1px solid black; }';
+ echo 'th, td { padding: 8px; text-align: left; }';
+ echo 'th { background-color: #f2f2f2; }';
+ echo '#edit { text-decoration: none; color:#333 !important; }';
+ echo '.hidden { display: none; }';
+ echo '.pagination { margin-top: 10px; }';
+ echo '</style>';
+ echo '<script>';
+ echo 'function toggleDetails(elementId) {';
+ echo '    var element = document.getElementById(elementId);';
+ echo '    if (element.style.display === "none") {';
+ echo '        element.style.display = "block";';
+ echo '    } else {';
+ echo '        element.style.display = "none";';
+ echo '    }';
+ echo '}';
+ echo '</script>';
+ 
+ echo '</head>';
+ ?>
 <body>
     <?php include('topBar.php'); ?>
     <div class="grid-container">
@@ -64,6 +88,9 @@ require('db.php');
             echo '<th>Partner ID</th>';
             echo '<th>Price</th>';
             echo '<th>Spots taken</th>';
+            echo '<th>End time</th>';
+            echo '<th>Start time</th>';
+            echo '<td><a id="edit" href="add/addparking.php">Add</a> </td>';
             echo '</tr>';
 
             foreach (array_slice($data, $startIndex, $itemsPerPage) as $parking) {
@@ -76,6 +103,9 @@ require('db.php');
                 echo '<td>' . $parking['partnerId'] . '</td>';
                 echo '<td>' . $parking['price'] . '</td>';
                 echo '<td>' . $parking['spotsTaken'] . '</td>';
+                echo '<td>' . $parking['endTime'] . '</td>';
+                echo '<td>' . $parking['startTime'] . '</td>';
+                echo '<td><a id="edit" href="edit/editparking.php?id=' . $parking['id'] . '">Edit</a> </td>';
                 echo '</tr>';
             }
 

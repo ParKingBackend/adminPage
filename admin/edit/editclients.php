@@ -7,6 +7,9 @@ if (isset($_GET['id'])) {
     echo "Service broken, no ID";
 }
 
+echo "<style>";
+echo 'a { text-decoration: none; color:#333; }';
+echo "</style>";
 $endpoint = '/api/client/get/all';
 $apiUrl = $apiBaseUrl . $endpoint;
 $delpoint = $apiBaseUrl . '/api/client/delete/';
@@ -56,12 +59,11 @@ if (isset($_POST['update'])) {
     }
 }
 ?>
-
 <!DOCTYPE html>
 <html>
 
 <head>
-    <link rel="stylesheet" type="text/css" href="\adminPage\admin\css\edit.css">
+    <link rel="stylesheet" type="text/css" href="../css/edit.css">
     <style>
         a {
             text-decoration: none;
@@ -96,9 +98,9 @@ if (isset($_POST['update'])) {
                 </div>
             </div>
 
-            <input type="submit" name="update" value="Update Entry">
-        </form>
-    </div>
+    <input type="submit" name="update" value="Update Entry">
+</form>
+</div>
 
 
 

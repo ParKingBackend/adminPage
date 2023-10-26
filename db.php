@@ -1,6 +1,6 @@
 <?php ob_start();
 
-$db['db_host'] = "localhost:3306";
+$db['db_host'] = "localhost:3311";
 $db['db_user'] = "root";
 $db['db_pass'] = "";
 $db['db_name'] = "clientData";

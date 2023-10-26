@@ -117,10 +117,87 @@ table th a {
 
 td {
   color: rgba(var(--secondary-color), 1);
+  justify-content: center;
 }
 
 tr {
   background-color: rgba(var(--secondary-color-darker), 1);
+}
+
+#edit-td:last-child {
+  background-color: rgba(var(--primary-color), 1);
+  text-align: center;
+  padding: 0;
+  transition: background-color 0.2s; /* Add a transition for smoother scaling */
+}
+
+#edit-td:last-child > a {
+  display: inline-block;
+  text-decoration: none;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.2s; /* Add a transition for smoother scaling */
+}
+
+.addNew:last-child > a > svg {
+  align-self: center;
+  fill: rgba(var(--text-color), 1);
+  width: 30px;
+  height: 30px;
+  display: block;
+  transition: transform 0.2s; /* Add a transition for smoother scaling */
+}
+
+.addNew {
+  transition: all 0.2s;
+  justify-content: center;
+}
+
+.edit {
+  transition: all 0.2s;
+  align-items: center;
+}
+
+.addNew:hover {
+  background-color: rgba(var(--primary-color), 1);
+  color: rgba(var(--text-color), 1);
+}
+
+#edit-td:last-child > a:hover {
+  transform: scale(1.2); /* Scale the link on hover */
+}
+
+#userPhoto {
+  justify-self: center;
+  margin-left: 50%;
+  align-items: center;
+}
+
+#userPhoto img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 2px solid rgba(var(--primary-color), 1);
+}
+
+/* New style for hidden elements */
+.hidden-details {
+  justify-content: center;
+  display: none;
+  padding: 10px;
+  margin-top: 5px;
+}
+
+.hidden-details img {
+  width: 300px;
+  height: auto;
+  border-radius: 10px;
+}
+
+.hidden img {
+  width: 300px;
+  height: auto;
+  border-radius: 10px;
 }
 
 #edit-td:last-child {
@@ -147,40 +224,12 @@ tr {
   transition: transform 0.2s; /* Add a transition for smoother scaling */
 }
 
-#edit-td:last-child > a:hover {
-  transform: scale(1.2); /* Scale the link on hover */
+table tr{
+  transition: all 0.1s;
+
 }
 
-#userPhoto {
-  display: flex;
-  margin: 0;
-  align-items: center;
-  border: none; /* Remove the border for the userPhoto td */
-}
-
-#userPhoto img {
-  width: 50px;
-  height: 50px;
-  border-radius: 50%;
-  border: 2px solid rgba(var(--primary-color), 1);
-}
-
-/* New style for hidden elements */
-.hidden-details {
-  justify-content: center;
-  display: none;
-  padding: 10px;
-  margin-top: 5px;
-}
-
-.hidden-details img {
-  width: 300px;
-  height: auto;
-  border-radius: 10px;
-}
-
-.hidden img {
-  width: 300px;
-  height: auto;
-  border-radius: 10px;
+table tr:hover {
+  background-color: rgba(var(--secondary-color-darker), 80%);
+  color: rgba(var(--text-color), 1);
 }

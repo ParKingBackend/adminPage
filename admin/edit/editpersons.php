@@ -6,7 +6,7 @@ require('../db.php');
 <html>
 
 <head>
-    <link rel="stylesheet" type="text/css" href="\adminPage\admin\css\edit.css">
+    <link rel="stylesheet" type="text/css" href="../css/edit.css">
 </head>
 
 <body>
@@ -14,6 +14,7 @@ require('../db.php');
     <?php
     if (isset($_GET['id'])) {
         $entryId = $_GET['id'];
+
     } else {
         echo "Service broken, no ID";
     }
@@ -22,7 +23,7 @@ require('../db.php');
     $delpoint = $apiBaseUrl . '/api/persons/delete/';
 
     $editpoint = $apiBaseUrl . '/api/persons/get/' . $entryId . '';
-    $updatepoint = $apiBaseUrl . '/api/persons/update/' . $entryId . '';
+    $updatepoint = $apiBaseUrl . '/api/persons/update/person/' . $entryId . '';
 
     $response = file_get_contents($editpoint);
 
@@ -35,6 +36,7 @@ require('../db.php');
     if ($data === null) {
         die('Failed to parse JSON response: ' . json_last_error_msg());
     }
+
 
     if (isset($_POST['update'])) {
         $updateData = [
@@ -64,24 +66,22 @@ require('../db.php');
 
     ?>
 
-    <div class="container">
-        <h1>Edit Client</h1>
-        <form method="POST" action="">
-            <div class="form-row">
-                <div class="label-column">
-                    <label for="firstName">First Name</label>
-                    <label for="surname">Surname</label>
-                </div>
-                <div class="input-column">
-                    <input type="text" name="firstName" value="<?php echo $data['firstName']; ?>">
-                    <input type="text" name="surname" value="<?php echo $data['surname']; ?>">
-                </div>
+<div class="container">
+    <h1>Edit Person</h1>
+    <form method="POST" action="">
+        <div class="form-row">
+            <div class="label-column">
+                <label for="firstName">First Name</label>
+                <label for="surname">Surname</label>
             </div>
-
-            <input type="submit" name="update" value="Update Entry">
-        </form>
-    </div>
-
+            <div class="input-column">
+                <input type="text" name="firstName" value="<?php echo $data['firstName']; ?>">
+                <input type="text" name="surname" value="<?php echo $data['surname']; ?>">
+            </div>
+        </div>
+        <input type="submit" name="update" value="Update Entry">
+    </form>
+</div>
 
 </body>
 

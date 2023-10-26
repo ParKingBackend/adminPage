@@ -3,12 +3,12 @@
 
 <head>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" type="text/css" href="\adminPage\admin\css\login.css">
+  <link rel="stylesheet" type="text/css" href="admin/css/login.css">
 </head>
 
 <body>
   <div class="container">
-    <img src="\adminPage\images\parging_logo.png" alt="ParKing logo">
+    <img src="admin/images/parging_logo.png" alt="ParKing logo">
     <h3 id="administration">ADMIN PANEL</h3>
 
       <?php

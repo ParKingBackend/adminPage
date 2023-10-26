@@ -3,10 +3,15 @@
 
 <head>
     <link rel="stylesheet" type="text/css" href="../css/edit.css">
+    <style>
+        a {
+            text-decoration: none;
+            color: #333;
+        }
+    </style>
 </head>
 
 <body>
-
     <?php
     require('../db.php');
     ?>
@@ -14,16 +19,16 @@
     <?php
     if (isset($_GET['id'])) {
         $entryId = $_GET['id'];
-
     } else {
         echo "Service broken, no ID";
     }
-    $endpoint = '/api/subscription/get/all';
-    $apiUrl = $apiBaseUrl . $endpoint;
-    $delpoint = $apiBaseUrl . '/api/subscription/delete/';
 
-    $editpoint = $apiBaseUrl . '/api/subscription/get/' . $entryId . '';
-    $updatepoint = $apiBaseUrl . '/api/subscription/update/premium-subscription/' . $entryId . '';
+    $endpoint = '/api/reservations/get/all';
+    $apiUrl = $apiBaseUrl . $endpoint;
+    $delpoint = $apiBaseUrl . '/api/reservations/delete/';
+
+    $editpoint = $apiBaseUrl . '/api/reservations/get/' . $entryId . '';
+    $updatepoint = $apiBaseUrl . '/api/reservations/update/' . $entryId . '';
 
     $response = file_get_contents($editpoint);
 
@@ -37,11 +42,9 @@
         die('Failed to parse JSON response: ' . json_last_error_msg());
     }
 
-
     if (isset($_POST['update'])) {
         $updateData = [
-            'endDate' => $_POST['endDate'],
-            'discountAmount' => $_POST['discountAmount']
+            'endTime' => $_POST['endTime']
         ];
 
         // Send a PUT request to update the entry
@@ -58,32 +61,27 @@
         if ($result !== false) {
             echo 'Data updated successfully.';
             sleep(1);
-            header('Location:../premiumsubs.php');
+            header('Location:../reservations.php');
         } else {
             echo 'Failed to update data.';
         }
     }
-
     ?>
 
-    <body>
-        <div class="container">
-            <h1>Edit Client</h1>
-            <form method="POST" action="">
-                <div class="form-row">
-                    <div class="label-column">
-                        <label for="endDate">End date</label>
-                        <label for="discountAmount">Discount amount</label>
-                    </div>
-                    <div class="input-column">
-                        <input type="text" name="endDate" value="<?php echo $data['endDate']; ?>">
-                        <input type="text" name="discountAmount" value="<?php echo $data['discountAmount']; ?>">
-                    </div>
+    <div class="container">
+        <h1>Edit Reservations</h1>
+        <form method="POST" action="">
+            <div class="form-row">
+                <div class="label-column">
+                    <label for="endTime">End Time</label>
                 </div>
-                <input type="submit" name="update" value="Update Entry">
-            </form>
-        </div>
-    </body>
+                <div class="input-column">
+                    <input type="text" name="endTime" value="<?php echo $data['endTime']; ?>">
+                </div>
+            </div>
+            <input type="submit" name="update" value="Update Entry">
+        </form>
+    </div>
 
 </body>
 
