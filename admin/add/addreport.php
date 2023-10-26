@@ -1,55 +1,88 @@
 <<<<<<< HEAD
 =======
 <?php
-require('db.php');
+require('../db.php');
 
 echo "<style>";
-echo 'a { text-decoration: none; color:#333; }';
+echo 'a { text-decoration; none; color:#333; }';
 echo "</style>";
 
-$apiUrl = $apiBaseUrl;
-$addpoint = $apiBaseUrl . '/api/parking/create'; // Define the API endpoint for creating parking entries
+// Define the API endpoint and base URL for reviews
 
+$apiUrl = $apiBaseUrl . '/api/report/create/';
+$apigetclient = $apiBaseUrl . '/api/client/get/all';
+$apigetparking = $apiBaseUrl . '/api/parking/get/all';
+
+$response = file_get_contents($apigetclient);
+
+if ($response === false) {
+    die('Failed to fetch client data from the API.');
+}
+
+$data = json_decode($response, true);
+
+if ($data === null) {
+    die('Failed to parse JSON response: ' . json_last_error_msg());
+} else {
+    // Extract the 'id' values from the API response and store them in an array
+    $clientIds = array_column($data, 'id');
+}
+
+
+$response = file_get_contents($apigetparking);
+
+if ($response === false) {
+    die('Failed to fetch parking data from the API.');
+}
+
+$data = json_decode($response, true);
+
+if ($data === null) {
+    die('Failed to parse JSON response: ' . json_last_error_msg());
+} else {
+    // Extract the 'id' values from the API response and store them in an array
+    $parkingIds = array_column($data, 'id');
+}
+
+// Check if the form is submitted
 if (isset($_POST['create'])) {
-    $parkingData = [
-        'address' => $_POST['address'],
-        'isPremium' => $_POST['isPremium'] == "true" ? true : false,
-        'partnerId' => (int)$_POST['partnerId'],
-        'maxSpotsCount' => (int)$_POST['maxSpotsCount'],
-        'price' => $_POST['price'],
-        'spotsTaken' => (int)$_POST['spotsTaken'],
-        'isDisabled' => $_POST['isDisabled'] == "true" ? true : false,
-        'endTime' => (int)$_POST['endTime'],
-        'startTime' => (int)$_POST['startTime']
+    $parkingId = $_POST['parkingId'];
+    $description = $_POST['description'];
+    $clientId = $_POST['clientId'];
+
+    // Prepare the data to send to the API
+    $postData = [
+        'description' => $description,
+        'clientId' => $clientId,
     ];
 
     // Create a cURL resource
     $ch = curl_init();
 
     // Set cURL options
-    curl_setopt($ch, CURLOPT_URL, $addpoint);
+    curl_setopt($ch, CURLOPT_URL, $apiBaseUrl . '/api/report/create/' . $parkingId);
     curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
     curl_setopt($ch, CURLOPT_HTTPHEADER, [
         'Content-Type: application/json',
     ]);
     curl_setopt($ch, CURLOPT_CUSTOMREQUEST, 'POST');
-    curl_setopt($ch, CURLOPT_POSTFIELDS, json_encode($parkingData));
+    curl_setopt($ch, CURLOPT_POSTFIELDS, json_encode($postData));
 
     // Execute cURL and get the response
-    $response = curl_exec($ch);
+    $resp = curl_exec($ch);
 
     // Check for errors
-    if ($response === false) {
-        echo 'Failed to create the parking entry.';
+    if ($resp === false) {
+        echo 'Failed to create the entry.';
     } else {
         // Check if the API response contains an error message
-        $responseData = json_decode($response, true);
+        $responseData = json_decode($resp, true);
         if (isset($responseData['error'])) {
-            echo 'Failed to create the parking entry: ' . $responseData['error'];
+            echo 'Failed to create the entry: ' . $responseData['error'];
         } else {
-            echo 'Parking entry created successfully.';
+            echo 'Data created successfully.';
             // Redirect to another page if needed
-            header("Location: parking.php");
+            header("Location: ../reviews.php"); // Adjust the redirect URL
         }
     }
 
@@ -58,6 +91,7 @@ if (isset($_POST['create'])) {
 }
 ?>
 
+<<<<<<< HEAD
 >>>>>>> 65bf1d9... put edit and half of add
 <!DOCTYPE html>
 <html>
@@ -272,8 +306,42 @@ if (isset($_POST['create'])) {
                 <input type="submit" name="create" value="Create Parking Entry">
             </form>
         </div>
-    </div>
-</body>
+=======
+<form method="POST" action="">
 
+    <div class="data-entry">
+        <label for="description">Description</label>
+        <input type="text" name="description" value="">
+    </div>
+
+    <div class="data-entry">
+        <label for="clientId">Client ID</label>
+        <select name="clientId">
+            <?php
+            // Generate options for the dropdown based on $clientIds
+            foreach ($clientIds as $clientId) {
+                echo '<option value="' . $clientId . '">' . $clientId . '</option>';
+            }
+            ?>
+        </select>
+    </div>
+    <div class="data-entry">
+        <label for="parkingId">Parking ID</label>
+        <select name="parkingId">
+            <?php
+            // Generate options for the dropdown based on $parkingIds
+            foreach ($parkingIds as $parkingId) {
+                echo '<option value="' . $parkingId . '">' . $parkingId . '</option>';
+            }
+            ?>
+        </select>
+>>>>>>> 28d2c43... done without edit/add design
+    </div>
+
+<<<<<<< HEAD
 </html>
 >>>>>>> 65bf1d9... put edit and half of add
+=======
+    <input type="submit" name="create" value="Create Entry">
+</form>
+>>>>>>> 28d2c43... done without edit/add design

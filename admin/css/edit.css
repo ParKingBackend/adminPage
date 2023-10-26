@@ -145,6 +145,7 @@
     margin: 1rem;
     padding: 0.5rem;
   }
+<<<<<<< HEAD
 
   input[type="number"]{
     width: 90%;
@@ -157,6 +158,10 @@
   }
   
   input[type="text"]{
+=======
+  
+  input[type="text"] {
+>>>>>>> 28d2c43... done without edit/add design
     width: 90%;
     padding: 0.5rem;
     margin: 1rem;
@@ -172,6 +177,7 @@
     background-color: rgba(var(--secondary-color-darker), 1);
   }
   
+<<<<<<< HEAD
   .select{
     width: 93%;
     padding: 0.5rem;
@@ -189,6 +195,8 @@
   }
 
 
+=======
+>>>>>>> 28d2c43... done without edit/add design
   input[type="submit"] {
     margin-top: 1rem;
     padding: 1rem;

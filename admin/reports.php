@@ -96,10 +96,15 @@ require('db.php');
             echo '<th>Parking ID</th>';
             echo '<th>Client ID</th>';
 <<<<<<< HEAD
+<<<<<<< HEAD
             echo '<td><a id="edit" href="add/addreport.php">Add</a> </td>';
 
 =======
 >>>>>>> 2dc472e... Fixed login, signout works, all data showedsqlnew
+=======
+            echo '<td><a id="edit" href="add/addreport.php">Add</a> </td>';
+
+>>>>>>> 28d2c43... done without edit/add design
 
             echo '</tr>';
 

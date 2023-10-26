@@ -104,7 +104,7 @@ $apiUrl = $apiBaseUrl . $endpoint;
 $delpoint = $apiBaseUrl .'/api/persons/delete/';
 
 $editpoint = $apiBaseUrl .'/api/persons/get/'.$entryId.'';
-$updatepoint = $apiBaseUrl .'/api/persons/update/'.$entryId.'';
+$updatepoint = $apiBaseUrl .'/api/persons/update/person/'.$entryId.'';
 
 $response = file_get_contents($editpoint);
 

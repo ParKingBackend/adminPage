@@ -1,4 +1,7 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 28d2c43... done without edit/add design
 <!DOCTYPE html>
 <html>
 
@@ -62,6 +65,7 @@
 </body>
 
 </html>
+<<<<<<< HEAD
 =======
 
 <div id="fashion">
@@ -140,3 +144,5 @@ $password =   $_POST['password'];
 </div>
 </div>
 >>>>>>> 2dc472e... Fixed login, signout works, all data showedsqlnew
+=======
+>>>>>>> 28d2c43... done without edit/add design

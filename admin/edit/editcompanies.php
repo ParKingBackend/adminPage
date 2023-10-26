@@ -24,8 +24,12 @@ $apiUrl = $apiBaseUrl . $endpoint;
 $delpoint = $apiBaseUrl .'/api/companies/delete/';
 
 $editpoint = $apiBaseUrl .'/api/companies/'.$entryId.'';
+<<<<<<< HEAD
 $updatepoint = $apiBaseUrl .'/api/companies/edit/'.$entryId.'';
 >>>>>>> 12e5de8... updated some shit
+=======
+$updatepoint = $apiBaseUrl .'/api/companies/update/'.$entryId.'';
+>>>>>>> 28d2c43... done without edit/add design
 
 $response = file_get_contents($editpoint);
 
@@ -68,6 +72,9 @@ if (isset($_POST['update'])) {
 
 ?>
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 28d2c43... done without edit/add design
 <!DOCTYPE html>
 <html>
 
@@ -84,6 +91,7 @@ if (isset($_POST['update'])) {
 <body>
 
     <div class="container">
+<<<<<<< HEAD
         <h1>Edit Company</h1>
         <form method="POST" action="">
             <div class="form-row">
@@ -107,15 +115,32 @@ if (isset($_POST['update'])) {
 =======
 <form method="POST" action="">
     <div class="data-entry">
+=======
+        <h1>Edit Client</h1>
+        <form method="POST" action="">
+            <div class="form-row">
+    <div class="label-column">
+>>>>>>> 28d2c43... done without edit/add design
         <label for="compName">compName</label>
-        <input type="text" name="compName" value="<?php echo $data['compName']; ?>">
+        <label for="bio">bio</label>
+       
     </div>
 
-    <div class="data-entry">
-        <label for="bio">bio</label>
+    <div class="input-column">
+        <input type="text" name="compName" value="<?php echo $data['compName']; ?>">
         <input type="text" name="bio" value="<?php echo $data['bio']; ?>">
     </div>
 
     <input type="submit" name="update" value="Update Entry">
 </form>
+<<<<<<< HEAD
 >>>>>>> 12e5de8... updated some shit
+=======
+</div>
+
+
+
+</body>
+
+</html>
+>>>>>>> 28d2c43... done without edit/add design

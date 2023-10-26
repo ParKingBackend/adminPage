@@ -35,6 +35,7 @@ if (isset($_POST['update'])) {
         'price' => $_POST['price'],
         'isPremium' => $_POST['isPremium'] == "true" ? true : false,
 <<<<<<< HEAD
+<<<<<<< HEAD
         'partnerId' => $_POST['partnerId'],
         'maxSpotsCount' => $_POST['maxSpotsCount'],
         'spotsTaken' => $_POST['spotsTaken'],
@@ -49,6 +50,14 @@ if (isset($_POST['update'])) {
         'endTime' => (int)$_POST['endTime'],
         'startTime' => (int)$_POST['startTime']
 >>>>>>> 65bf1d9... put edit and half of add
+=======
+        'partnerId' => $_POST['partnerId'],
+        'maxSpotsCount' => $_POST['maxSpotsCount'],
+        'spotsTaken' => $_POST['spotsTaken'],
+        'isDisabled' => $_POST['isDisabled'] == "true" ? true : false,
+        'endTime' => $_POST['endTime'],
+        'startTime' => $_POST['startTime']
+>>>>>>> 28d2c43... done without edit/add design
     ];
 
     // Send a PUT request to update the entry
@@ -72,6 +81,9 @@ if (isset($_POST['update'])) {
 }
 ?>
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 28d2c43... done without edit/add design
 <!DOCTYPE html>
 <html>
 
@@ -92,6 +104,7 @@ if (isset($_POST['update'])) {
         <form method="POST" action="">
             <div class="form-row">
                 <div class="label-column">
+<<<<<<< HEAD
         <label for="address">Address</label>
         <label for="price">Price</label>
         <label for="isPremium">Is Premium</label>
@@ -111,22 +124,34 @@ if (isset($_POST['update'])) {
 
 <form method="POST" action="">
     <div class="data-entry">
+=======
+>>>>>>> 28d2c43... done without edit/add design
         <label for="address">Address</label>
-        <input type="text" name="address" value="<?php echo $data['address']; ?>">
-    </div>
-
-    <div class="data-entry">
         <label for="price">Price</label>
-        <input type="text" name="price" value="<?php echo $data['price']; ?>">
-    </div>
+        <label for="isPremium">Is Premium</label>
+        <label for="partnerId">Partner ID</label>
+        <label for="maxSpotsCount">Max Spots Count</label>
+        <label for="spotsTaken">Spots Taken</label>
+        <label for="isDisabled">Is Disabled</label>
+        <label for="endTime">End time</label>
+        <label for="startTime">Start time</label>
+        </div>
+                <div class="input-column">
+        <input type="text" name="address" value="<?php echo $data['address']; ?>">
 
+        <input type="text" name="price" value="<?php echo $data['price']; ?>">
+
+<<<<<<< HEAD
     <div class="data-entry">
         <label for="isPremium">Is Premium</label>
 >>>>>>> 65bf1d9... put edit and half of add
+=======
+>>>>>>> 28d2c43... done without edit/add design
         <select name="isPremium">
             <option value="true" <?php if ($data['isPremium']) echo 'selected'; ?>>True</option>
             <option value="false" <?php if (!$data['isPremium']) echo 'selected'; ?>>False</option>
         </select>
+<<<<<<< HEAD
 <<<<<<< HEAD
 
         <input type="text" name="partnerId" value="<?php echo $data['partnerId']; ?>">
@@ -137,29 +162,26 @@ if (isset($_POST['update'])) {
 
 =======
     </div>
+=======
+>>>>>>> 28d2c43... done without edit/add design
 
-    <div class="data-entry">
-        <label for="partnerId">Partner ID</label>
         <input type="text" name="partnerId" value="<?php echo $data['partnerId']; ?>">
-    </div>
 
-    <div class="data-entry">
-        <label for="maxSpotsCount">Max Spots Count</label>
         <input type="text" name="maxSpotsCount" value="<?php echo $data['maxSpotsCount']; ?>">
-    </div>
 
-    <div class="data-entry">
-        <label for="spotsTaken">Spots Taken</label>
         <input type="text" name="spotsTaken" value="<?php echo $data['spotsTaken']; ?>">
-    </div>
 
+<<<<<<< HEAD
     <div class="data-entry">
         <label for="isDisabled">Is Disabled</label>
 >>>>>>> 65bf1d9... put edit and half of add
+=======
+>>>>>>> 28d2c43... done without edit/add design
         <select name="isDisabled">
             <option value="true" <?php if ($data['isDisabled']) echo 'selected'; ?>>True</option>
             <option value="false" <?php if (!$data['isDisabled']) echo 'selected'; ?>>False</option>
         </select>
+<<<<<<< HEAD
 <<<<<<< HEAD
 
         <input type="text" name="endTime" value="<?php echo $data['endTime']; ?>">
@@ -181,14 +203,25 @@ if (isset($_POST['update'])) {
     </div>
     <div class="data-entry">
         <label for="endTime">End time</label>
-        <input type="text" name="endTime" value="<?php echo $data['endTime']; ?>">
-    </div>
+=======
 
-    <div class="data-entry">
-        <label for="startTime">Start time</label>
+>>>>>>> 28d2c43... done without edit/add design
+        <input type="text" name="endTime" value="<?php echo $data['endTime']; ?>">
+
         <input type="text" name="startTime" value="<?php echo $data['startTime']; ?>">
-    </div>
+        </div>
+            </div>
 
     <input type="submit" name="update" value="Update Entry">
 </form>
+<<<<<<< HEAD
 >>>>>>> 65bf1d9... put edit and half of add
+=======
+</div>
+
+
+
+</body>
+
+</html>
+>>>>>>> 28d2c43... done without edit/add design

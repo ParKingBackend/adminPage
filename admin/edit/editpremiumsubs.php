@@ -106,7 +106,7 @@ $apiUrl = $apiBaseUrl . $endpoint;
 $delpoint = $apiBaseUrl .'/api/subscription/delete/';
 
 $editpoint = $apiBaseUrl .'/api/subscription/get/'.$entryId.'';
-$updatepoint = $apiBaseUrl .'/api/subscription/update/'.$entryId.'';
+$updatepoint = $apiBaseUrl .'/api/subscription/update/premium-subscription/'.$entryId.'';
 
 $response = file_get_contents($editpoint);
 

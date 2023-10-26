@@ -44,6 +44,7 @@ require('db.php');
             echo 'th { background-color: #f2f2f2; }';
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
             echo 'a, #href { text-decoration: none; color:#333; }';
 =======
             echo 'a { text-decoration: none; color:#333; }';
@@ -51,6 +52,9 @@ require('db.php');
 =======
             echo 'a,#href { text-decoration: none; color:#333; }';
 >>>>>>> 65bf1d9... put edit and half of add
+=======
+            echo 'a, #href { text-decoration: none; color:#333; }';
+>>>>>>> 28d2c43... done without edit/add design
             echo '.hidden { display: none; }';
             echo '.pagination { margin-top: 10px; }';
             echo '</style>';

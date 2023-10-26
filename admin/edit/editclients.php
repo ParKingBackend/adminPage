@@ -60,6 +60,9 @@ if (isset($_POST['update'])) {
 }
 ?>
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 28d2c43... done without edit/add design
 <!DOCTYPE html>
 <html>
 
@@ -98,6 +101,7 @@ if (isset($_POST['update'])) {
                     <input type="text" name="level" value="<?php echo $data['level']; ?>">
                 </div>
             </div>
+<<<<<<< HEAD
 
     <input type="submit" name="update" value="Update Entry">
 </form>
@@ -149,3 +153,15 @@ if (isset($_POST['update'])) {
     <input type="submit" name="update" value="Update Entry">
 </form>
 >>>>>>> 12e5de8... updated some shit
+=======
+
+    <input type="submit" name="update" value="Update Entry">
+</form>
+</div>
+
+
+
+</body>
+
+</html>
+>>>>>>> 28d2c43... done without edit/add design

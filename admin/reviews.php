@@ -43,10 +43,14 @@ require('db.php');
             echo 'th, td { padding: 8px; text-align: left; }';
             echo 'th { background-color: #f2f2f2; }';
 <<<<<<< HEAD
+<<<<<<< HEAD
             echo 'a, #href { text-decoration: none; color:#333; }';
 =======
             echo 'a { text-decoration: none; color:#333; }';
 >>>>>>> 2dc472e... Fixed login, signout works, all data showedsqlnew
+=======
+            echo 'a, #href { text-decoration: none; color:#333; }';
+>>>>>>> 28d2c43... done without edit/add design
             echo '.hidden { display: none; }';
             echo '.pagination { margin-top: 10px; }';
             echo '</style>';
@@ -99,10 +103,15 @@ require('db.php');
             echo '<th>Parking ID</th>';
             echo '<th>Client ID</th>';
 <<<<<<< HEAD
+<<<<<<< HEAD
             echo '<td class="addNew"><a id="edit" href="add/addreview.php">Add</a> </td>';
 
 =======
 >>>>>>> 2dc472e... Fixed login, signout works, all data showedsqlnew
+=======
+            echo '<td><a id="edit" href="add/addreview.php">Add</a> </td>';
+
+>>>>>>> 28d2c43... done without edit/add design
 
             echo '</tr>';
 
