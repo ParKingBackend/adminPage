@@ -100,7 +100,7 @@ for ($i = $startIndex; $i < $endIndex; $i++) {
     echo '<td>' . $company['compName'] . '</td>';
     echo '<td>' . $company['bio'] . '</td>';
     echo '<td>';
-    echo '<a href="javascript:void(0);" onclick="toggleClientDetails(\'' . $company['id'] . '\')">Show Client</a>';
+    echo '<a href="javascript:void(0);" onclick="toggleClientDetails(\'' . $company['id'] . '\')">'. $company['client']['id'] .' : Show Client</a>';
     echo '<div id="' . $company['id'] . '" class="hidden">';
     echo 'Client ID: ' . $company['client']['id'] . '<br>';
     echo 'Username: ' . $company['client']['username'] . '<br>';

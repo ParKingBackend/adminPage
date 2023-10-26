@@ -99,7 +99,7 @@ for ($i = $startIndex; $i < $endIndex; $i++) {
     echo '<td>' . $person['firstName'] . '</td>';
     echo '<td>' . $person['surname'] . '</td>';
     echo '<td>';
-    echo '<a href="javascript:void(0);" onclick="toggleClientDetails(\'' . $person['id'] . '\')">Show Client</a>';
+    echo '<a href="javascript:void(0);" onclick="toggleClientDetails(\'' . $person['id'] . '\')">'. $person['client']['id'] .' : Show Client</a>';
     echo '<div id="' . $person['id'] . '" class="hidden">';
     echo 'Client ID: ' . $person['client']['id'] . '<br>';
     echo 'Username: ' . $person['client']['username'] . '<br>';
