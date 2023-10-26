@@ -121,7 +121,12 @@ echo '</head>';
                 echo '<td>' . $client['level'] . '</td>';
                 echo '<td>' . $client['username'] . '</td>';
                 echo '<td>' . $client['xp'] . '</td>';
+<<<<<<< HEAD
 >>>>>>> 2dc472e... Fixed login, signout works, all data showedsqlnew
+=======
+                echo '<td><a href="edit/editclients.php?id=' . $client['id'] . '">Edit</a> </td>';
+
+>>>>>>> 12e5de8... updated some shit
                 echo '</tr>';
 
             }

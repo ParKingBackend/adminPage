@@ -250,6 +250,7 @@ for ($i = $startIndex; $i < $endIndex; $i++) {
     echo 'xp: ' . $company['client']['xp'] . '<br>';
     echo '</div>';
     echo '</td>';
+    echo '<td><a href="edit/editcompanies.php?id=' . $company['id'] . '">Edit</a> </td>';
     echo '</tr>';
 }
 

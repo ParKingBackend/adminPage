@@ -152,6 +152,7 @@ require('db.php');
 <?php
 $endpoint = '/api/subscription/get/all'; // Adjust the endpoint as needed
 $apiUrl = $apiBaseUrl . $endpoint;
+$delpoint = '';
 
 $response = file_get_contents($apiUrl);
 
@@ -243,6 +244,7 @@ for ($i = $startIndex; $i < $endIndex; $i++) {
     echo 'xp: ' . $subscription['client']['xp'] . '<br>';
     echo '</div>';
     echo '</td>';
+    echo '<td><a href="edit/editpremiumsubs.php?id=' . $subscription['id'] . '">Edit</a> </td>';
     echo '</tr>';
 }
 

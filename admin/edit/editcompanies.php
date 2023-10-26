@@ -7,6 +7,7 @@ if (isset($_GET['id'])) {
     $entryId = $_GET['id'];
 
 } else {
+<<<<<<< HEAD
     echo "Service broken, no ID";
 }
 $endpoint = '/api/companies/get/all';
@@ -15,6 +16,16 @@ $delpoint = $apiBaseUrl . '/api/companies/delete/';
 
 $editpoint = $apiBaseUrl . '/api/companies/' . $entryId . '';
 $updatepoint = $apiBaseUrl . '/api/companies/update/' . $entryId . '';
+=======
+   echo "Service broken, no ID";
+}
+$endpoint = '/api/companies/get/all';
+$apiUrl = $apiBaseUrl . $endpoint;
+$delpoint = $apiBaseUrl .'/api/companies/delete/';
+
+$editpoint = $apiBaseUrl .'/api/companies/'.$entryId.'';
+$updatepoint = $apiBaseUrl .'/api/companies/edit/'.$entryId.'';
+>>>>>>> 12e5de8... updated some shit
 
 $response = file_get_contents($editpoint);
 
@@ -56,6 +67,7 @@ if (isset($_POST['update'])) {
 }
 
 ?>
+<<<<<<< HEAD
 <!DOCTYPE html>
 <html>
 
@@ -92,3 +104,18 @@ if (isset($_POST['update'])) {
 </body>
 
 </html>
+=======
+<form method="POST" action="">
+    <div class="data-entry">
+        <label for="compName">compName</label>
+        <input type="text" name="compName" value="<?php echo $data['compName']; ?>">
+    </div>
+
+    <div class="data-entry">
+        <label for="bio">bio</label>
+        <input type="text" name="bio" value="<?php echo $data['bio']; ?>">
+    </div>
+
+    <input type="submit" name="update" value="Update Entry">
+</form>
+>>>>>>> 12e5de8... updated some shit

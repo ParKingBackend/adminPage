@@ -59,6 +59,7 @@ if (isset($_POST['update'])) {
     }
 }
 ?>
+<<<<<<< HEAD
 <!DOCTYPE html>
 <html>
 
@@ -107,3 +108,44 @@ if (isset($_POST['update'])) {
 </body>
 
 </html>
+=======
+
+<form method="POST" action="">
+    <div class="data-entry">
+        <label for="username">Username</label>
+        <input type="text" name="username" value="<?php echo $data['username']; ?>">
+    </div>
+
+    <div class="data-entry">
+        <label for="password">Password</label>
+        <input type="text" name="password" value="<?php echo $data['password']; ?>">
+    </div>
+
+    <div class="data-entry">
+        <label for="email">Email</label>
+        <input type="text" name="email" value="<?php echo $data['email']; ?>">
+    </div>
+
+    <div class="data-entry">
+        <label for="bankAccount">Bank Account</label>
+        <input type="text" name="bankAccount" value="<?php echo $data['bankAccount']; ?>">
+    </div>
+
+    <div class="data-entry">
+        <label for="image">Image</label>
+        <input type="text" name="image" value="<?php echo $data['image']; ?>">
+    </div>
+
+    <div class="data-entry">
+        <label for="xp">XP</label>
+        <input type="text" name="xp" value="<?php echo $data['xp']; ?>">
+    </div>
+
+    <div class="data-entry">
+        <label for="level">Level</label>
+        <input type="text" name="level" value="<?php echo $data['level']; ?>">
+    </div>
+
+    <input type="submit" name="update" value="Update Entry">
+</form>
+>>>>>>> 12e5de8... updated some shit
