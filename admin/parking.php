@@ -20,7 +20,7 @@ require('db.php');
         <div class="content">
             <?php
             // API endpoint and base URL
-            $endpoint = '/api/client/get/all';
+            $endpoint = '/api/parking/get/all';
             $apiUrl = $apiBaseUrl . $endpoint;
 
             // Fetch data from the API
@@ -57,25 +57,25 @@ require('db.php');
             echo '<table>';
             echo '<tr>';
             echo '<th>ID</th>';
-            echo '<th>Username</th>';
-            echo '<th>Email</th>';
-            echo '<th>Bank Account</th>';
-            echo '<th>Image</th>';
-            echo '<th>Level</th>';
-            echo '<th>Username</th>';
-            echo '<th>XP</th>';
+            echo '<th>Address</th>';
+            echo '<th>Disabled?</th>';
+            echo '<th>Premium?</th>';
+            echo '<th>Max spots</th>';
+            echo '<th>Partner ID</th>';
+            echo '<th>Price</th>';
+            echo '<th>Spots taken</th>';
             echo '</tr>';
 
-            foreach (array_slice($data, $startIndex, $itemsPerPage) as $client) {
+            foreach (array_slice($data, $startIndex, $itemsPerPage) as $parking) {
                 echo '<tr>';
-                echo '<td>' . $client['id'] . '</td>';
-                echo '<td>' . $client['username'] . '</td>';
-                echo '<td>' . $client['email'] . '</td>';
-                echo '<td>' . $client['bankAccount'] . '</td>';
-                echo '<td> <img src="' . $client['image'] . '" width="50" height="50">' . '</td>';
-                echo '<td>' . $client['level'] . '</td>';
-                echo '<td>' . $client['username'] . '</td>';
-                echo '<td>' . $client['xp'] . '</td>';
+                echo '<td>' . $parking['id'] . '</td>';
+                echo '<td>' . $parking['address'] . '</td>';
+                echo '<td>' . ($parking['isDisabled'] ? 'true' : 'false') . '</td>';
+                echo '<td>' . ($parking['isPremium'] ? 'true' : 'false') . '</td>';
+                echo '<td>' . $parking['maxSpotsCount'] . '</td>';
+                echo '<td>' . $parking['partnerId'] . '</td>';
+                echo '<td>' . $parking['price'] . '</td>';
+                echo '<td>' . $parking['spotsTaken'] . '</td>';
                 echo '</tr>';
             }
 

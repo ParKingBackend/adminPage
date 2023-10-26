@@ -1,11 +1,22 @@
 <?php
 require('db.php');
-include ('mainPage.php');
-?>
- <link rel="stylesheet" type="text/css" href="css/admin.css">
-<?php 
 
-$endpoint = '/persons/get/all';
+?>
+<head>
+    <link rel="stylesheet" type="text/css" href="css/admin.css">
+    <link rel="stylesheet" type="text/css" href="css/pageLayout.css">
+    <link rel="stylesheet" type="text/css" href="css/fonts.css">
+</head>
+
+<body>
+    <?php include('topBar.php'); ?>
+    <div class="grid-container">
+        <div class="side-menu">
+            <?php include('sideMenu.php'); ?>
+        </div>
+        <div class="content">
+<?php
+$endpoint = '/api/persons/get/all';
 $apiUrl = $apiBaseUrl . $endpoint;
 
 $response = file_get_contents($apiUrl);
@@ -40,7 +51,7 @@ echo 'table { border-collapse: collapse; width: 100%; }';
 echo 'table, th, td { border: 1px solid black; }';
 echo 'th, td { padding: 8px; text-align: left; }';
 echo 'th { background-color: #f2f2f2; }';
-echo 'a { text-decoration: none; }';
+echo 'a { text-decoration: none; color:#333; }';
 echo '.hidden { display: none; }';
 echo '.pagination { margin-top: 10px; }';
 echo '</style>';
@@ -93,7 +104,9 @@ for ($i = $startIndex; $i < $endIndex; $i++) {
     echo 'Client ID: ' . $person['client']['id'] . '<br>';
     echo 'Username: ' . $person['client']['username'] . '<br>';
     echo 'Email: ' . $person['client']['email'] . '<br>';
-    echo 'Bank Account: ' . $person['client']['bankAccount'] . '<br>';
+    echo 'Image: <img src="' . $person['client']['image'] . '" width="50" height="50">' . '<br>';
+    echo 'level: ' . $person['client']['level'] . '<br>';
+    echo 'xp: ' . $person['client']['xp'] . '<br>';
     echo '</div>';
     echo '</td>';
     echo '</tr>';
@@ -117,3 +130,7 @@ echo '</div>';
 echo '</body>';
 echo '</html>';
 ?>
+
+        </div>
+    </div>
+</body>

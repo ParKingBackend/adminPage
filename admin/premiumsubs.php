@@ -2,9 +2,20 @@
 require('db.php');
 
 ?>
-<link rel="stylesheet" type="text/css" href="css/admin.css">
-<?php
+<head>
+    <link rel="stylesheet" type="text/css" href="css/admin.css">
+    <link rel="stylesheet" type="text/css" href="css/pageLayout.css">
+    <link rel="stylesheet" type="text/css" href="css/fonts.css">
+</head>
 
+<body>
+    <?php include('topBar.php'); ?>
+    <div class="grid-container">
+        <div class="side-menu">
+            <?php include('sideMenu.php'); ?>
+        </div>
+        <div class="content">
+<?php
 $endpoint = '/api/subscription/get/all'; // Adjust the endpoint as needed
 $apiUrl = $apiBaseUrl . $endpoint;
 
@@ -40,7 +51,7 @@ echo 'table { border-collapse: collapse; width: 100%; }';
 echo 'table, th, td { border: 1px solid black; }';
 echo 'th, td { padding: 8px; text-align: left; }';
 echo 'th { background-color: #f2f2f2; }';
-echo 'a { text-decoration: none; }';
+echo 'a { text-decoration: none; color:#333; }';
 echo '.hidden { display: none; }';
 echo '.pagination { margin-top: 10px; }';
 echo '</style>';
@@ -56,7 +67,7 @@ echo '}';
 echo '</script>';
 echo '</head>';
 echo '<body>';
-echo '<h1>Premium Subscription Data</h1>';
+echo '<h1>Premium data</h1>';
 
 // Sort the data when a column header is clicked
 if (isset($_GET['sort']) && isset($_GET['order'])) {
@@ -90,7 +101,12 @@ for ($i = $startIndex; $i < $endIndex; $i++) {
     echo '<td>';
     echo '<a href="javascript:void(0);" onclick="toggleClientDetails(\'' . $subscription['id'] . '\')">Show Client</a>';
     echo '<div id="' . $subscription['id'] . '" class="hidden">';
-    echo 'Client ID: ' . $subscription['client_id'] . '<br>';
+    echo 'Client ID: ' . $subscription['client']['id'] . '<br>';
+    echo 'Username: ' . $subscription['client']['username'] . '<br>';
+    echo 'Email: ' . $subscription['client']['email'] . '<br>';
+    echo 'Image: <img src="' . $subscription['client']['image'] . '" width="50" height="50">' . '<br>';
+    echo 'level: ' . $subscription['client']['level'] . '<br>';
+    echo 'xp: ' . $subscription['client']['xp'] . '<br>';
     echo '</div>';
     echo '</td>';
     echo '</tr>';
@@ -114,3 +130,8 @@ echo '</div>';
 echo '</body>';
 echo '</html>';
 ?>
+        </div>
+    </div>
+</body>
+
+</html>
