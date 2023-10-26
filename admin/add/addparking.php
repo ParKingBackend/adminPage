@@ -12,12 +12,12 @@ if (isset($_POST['create'])) {
     $address = $_POST['address'];
     $price = $_POST['price'];
     $isPremium = $_POST['isPremium'] == "true" ? true : false;
-    $partnerId = (int)$_POST['partnerId'];
-    $maxSpotsCount = (int)$_POST['maxSpotsCount'];
-    $spotsTaken = (int)$_POST['spotsTaken'];
+    $partnerId = $_POST['partnerId'];
+    $maxSpotsCount = $_POST['maxSpotsCount'];
+    $spotsTaken = $_POST['spotsTaken'];
     $isDisabled = $_POST['isDisabled'] == "true" ? true : false;
-    $startTime = (int)$_POST['startTime'];
-    $endTime = (int)$_POST['endTime'];
+    $startTime = $_POST['startTime'];
+    $endTime = $_POST['endTime'];
 
     // Prepare the data to send to the API
     $postData = [

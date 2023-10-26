@@ -42,7 +42,7 @@ require('db.php');
             echo 'table, th, td { border: 1px solid black; }';
             echo 'th, td { padding: 8px; text-align: left; }';
             echo 'th { background-color: #f2f2f2; }';
-            echo 'a { text-decoration: none; color:#333; }';
+            echo 'a, #href { text-decoration: none; color:#333; }';
             echo '.hidden { display: none; }';
             echo '.pagination { margin-top: 10px; }';
             echo '</style>';
@@ -86,6 +86,8 @@ require('db.php');
             echo '<th>Title</th>';
             echo '<th>Parking ID</th>';
             echo '<th>Client ID</th>';
+            echo '<td><a id="edit" href="add/addreview.php">Add</a> </td>';
+
 
             echo '</tr>';
 

@@ -30,10 +30,10 @@ if ($data === null) {
 
 if (isset($_POST['update'])) {
     $updateData = [
+        'title' => $_POST['title'],
         'description' => $_POST['description'],
-        'postedTime' => $_POST['postedTime'],
         'rating' => $_POST['rating'],
-        'title' => $_POST['title']
+
     ];
 
     // Send a PUT request to update the entry
@@ -58,22 +58,20 @@ if (isset($_POST['update'])) {
 ?>
 
 <form method="POST" action="">
-<div class="data-entry">
+    <div class="data-entry">
+    <div class="data-entry">
+        <label for="title">Title</label>
+        <input type="text" name="title" value="<?php echo $data['title']; ?>">
+    </div>
         <label for="description">Description</label>
         <input type="text" name="description" value="<?php echo $data['description']; ?>">
-    </div>
-    <div class="data-entry">
-        <label for="postedTime">Posted time</label>
-        <input type="text" name="postedTime" value="<?php echo $data['postedTime']; ?>">
     </div>
     <div class="data-entry">
         <label for="rating">Rating</label>
         <input type="number" name="rating" value="<?php echo $data['rating']; ?>">
     </div>
-    <div class="data-entry">
-        <label for="title">Title</label>
-        <input type="text" name="title" value="<?php echo $data['title']; ?>">
-    </div>
+
 
     <input type="submit" name="update" value="Update Entry">
 </form>
+

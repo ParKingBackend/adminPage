@@ -5,11 +5,12 @@ echo "<style>";
 echo 'a { text-decoration: none; color:#333; }';
 echo "</style>";
 
-$delpoint = $apiBaseUrl . '/api/client/delete/';
-$apiUrl = $apiBaseUrl . '/api/client/get/all';
+// Define the API endpoint and base URL for reservations
+$apiUrl = $apiBaseUrl . '/api/reservations/create';
+$apigetclient = $apiBaseUrl . '/api/client/get/all';
+$apigetparking = $apiBaseUrl . '/api/parking/get/all';
 
-// Fetch client data from the API
-$response = file_get_contents($apiUrl);
+$response = file_get_contents($apigetclient);
 
 if ($response === false) {
     die('Failed to fetch client data from the API.');
@@ -24,23 +25,39 @@ if ($data === null) {
     $clientIds = array_column($data, 'id');
 }
 
+$response = file_get_contents($apigetparking);
+
+if ($response === false) {
+    die('Failed to fetch parking data from the API.');
+}
+
+$data = json_decode($response, true);
+
+if ($data === null) {
+    die('Failed to parse JSON response: ' . json_last_error_msg());
+} else {
+    // Extract the 'id' values from the API response and store them in an array
+    $parkingIds = array_column($data, 'id');
+}
+
 // Check if the form is submitted
 if (isset($_POST['create'])) {
-    $compName = $_POST['compName'];
-    $bio = $_POST['bio'];
     $clientId = $_POST['clientId'];
+    $parkingId = $_POST['parkingId'];
+    $endTime = $_POST['endTime'];
 
     // Prepare the data to send to the API
     $postData = [
-        'compName' => $compName,
-        'bio' => $bio,
+        'clientId' => $clientId,
+        'parkingId' => $parkingId,
+        'endTime' => $endTime,
     ];
 
     // Create a cURL resource
     $ch = curl_init();
 
     // Set cURL options
-    curl_setopt($ch, CURLOPT_URL, $apiBaseUrl . '/api/companies/create/' . $clientId);
+    curl_setopt($ch, CURLOPT_URL, $apiUrl);
     curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
     curl_setopt($ch, CURLOPT_HTTPHEADER, [
         'Content-Type: application/json',
@@ -53,7 +70,7 @@ if (isset($_POST['create'])) {
 
     // Check for errors
     if ($response === false) {
-        echo 'Failed to create the entry.';
+        echo 'Failed to create the entry. Error: ' . curl_error($ch);
     } else {
         // Check if the API response contains an error message
         $responseData = json_decode($response, true);
@@ -62,7 +79,7 @@ if (isset($_POST['create'])) {
         } else {
             echo 'Data created successfully.';
             // Redirect to another page if needed
-            header("Location: ../companies.php");
+            header("Location: ../reservations.php");
         }
     }
 
@@ -73,15 +90,20 @@ if (isset($_POST['create'])) {
 
 <form method="POST" action="">
     <div class="data-entry">
-        <label for="compName">Companyname</label>
-        <input type="text" name="compName" value="compName">
+        <label for="endTime">End Time</label>
+        <input type="text" name="endTime" placeholder="Enter End Time">
     </div>
-
     <div class="data-entry">
-        <label for="bio">Bio</label>
-        <input type="text" name="bio" value="bio">
+        <label for="parkingId">Parking ID</label>
+        <select name="parkingId">
+            <?php
+            // Generate options for the dropdown based on $parkingIds
+            foreach ($parkingIds as $parkingId) {
+                echo '<option value="' . $parkingId . '">' . $parkingId . '</option>';
+            }
+            ?>
+        </select>
     </div>
-
     <div class="data-entry">
         <label for="clientId">Client ID</label>
         <select name="clientId">

@@ -59,42 +59,51 @@ if (isset($_POST['update'])) {
     }
 }
 ?>
+<!DOCTYPE html>
+<html>
 
-<form method="POST" action="">
-    <div class="data-entry">
-        <label for="username">Username</label>
-        <input type="text" name="username" value="<?php echo $data['username']; ?>">
-    </div>
+<head>
+    <link rel="stylesheet" type="text/css" href="../css/edit.css">
+    <style>
+        a {
+            text-decoration: none;
+            color: #333;
+        }
+    </style>
+</head>
 
-    <div class="data-entry">
-        <label for="password">Password</label>
-        <input type="text" name="password" value="<?php echo $data['password']; ?>">
-    </div>
+<body>
 
-    <div class="data-entry">
-        <label for="email">Email</label>
-        <input type="text" name="email" value="<?php echo $data['email']; ?>">
-    </div>
-
-    <div class="data-entry">
-        <label for="bankAccount">Bank Account</label>
-        <input type="text" name="bankAccount" value="<?php echo $data['bankAccount']; ?>">
-    </div>
-
-    <div class="data-entry">
-        <label for="image">Image</label>
-        <input type="text" name="image" value="<?php echo $data['image']; ?>">
-    </div>
-
-    <div class="data-entry">
-        <label for="xp">XP</label>
-        <input type="text" name="xp" value="<?php echo $data['xp']; ?>">
-    </div>
-
-    <div class="data-entry">
-        <label for="level">Level</label>
-        <input type="text" name="level" value="<?php echo $data['level']; ?>">
-    </div>
+    <div class="container">
+        <h1>Edit Client</h1>
+        <form method="POST" action="">
+            <div class="form-row">
+                <div class="label-column">
+                    <label for="username">Username</label>
+                    <label for="password">Password</label>
+                    <label for="email">Email</label>
+                    <label for="bankAccount">Bank Account</label>
+                    <label for="image">Image</label>
+                    <label for="xp">XP</label>
+                    <label for="level">Level</label>
+                </div>
+                <div class="input-column">
+                    <input type="text" name="username" value="<?php echo $data['username']; ?>">
+                    <input type="text" name="password" value="<?php echo $data['password']; ?>">
+                    <input type="text" name="email" value="<?php echo $data['email']; ?>">
+                    <input type="text" name="bankAccount" value="<?php echo $data['bankAccount']; ?>">
+                    <input type="text" name="image" value="<?php echo $data['image']; ?>">
+                    <input type="text" name="xp" value="<?php echo $data['xp']; ?>">
+                    <input type="text" name="level" value="<?php echo $data['level']; ?>">
+                </div>
+            </div>
 
     <input type="submit" name="update" value="Update Entry">
 </form>
+</div>
+
+
+
+</body>
+
+</html>

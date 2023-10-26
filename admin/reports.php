@@ -83,6 +83,8 @@ require('db.php');
             echo '<th>Description</th>';
             echo '<th>Parking ID</th>';
             echo '<th>Client ID</th>';
+            echo '<td><a id="edit" href="add/addreport.php">Add</a> </td>';
+
 
             echo '</tr>';
 
