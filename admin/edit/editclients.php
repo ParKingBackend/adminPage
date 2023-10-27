@@ -12,7 +12,7 @@ echo 'a { text-decoration: none; color:#333; }';
 echo "</style>";
 $endpoint = '/api/client/get/all';
 $apiUrl = $apiBaseUrl . $endpoint;
-$delpoint = $apiBaseUrl . '/api/client/delete/';
+$delpoint = $apiBaseUrl . '/api/client/delete/'. $entryId .'';
 $editpoint = $apiBaseUrl . '/api/client/get/' . $entryId . '';
 $updatepoint = $apiBaseUrl . '/api/client/update/' . $entryId . '';
 
@@ -33,7 +33,6 @@ if (isset($_POST['update'])) {
         'username' => $_POST['username'],
         'password' => $_POST['password'],
         'email' => $_POST['email'],
-        'bankAccount' => $_POST['bankAccount'],
         'image' => $_POST['image'],
         'xp' => $_POST['xp'],
         'level' => $_POST['level']
@@ -58,6 +57,28 @@ if (isset($_POST['update'])) {
         echo 'Failed to update data.';
     }
 }
+
+if (isset($_POST['delete'])) {
+    // Send a DELETE request to delete the entry
+    $options = [
+        'http' => [
+            'method' => 'DELETE',
+            'header' => 'Content-Type: application/json', // Check if this header is required
+        ],
+    ];
+    $context = stream_context_create($options);
+    $result = @file_get_contents($delpoint, false, $context); // Use @ to suppress warnings
+
+    if ($result !== false) {
+        echo 'Data deleted successfully.';
+        sleep(1);
+        header('Location: ../clients.php');
+    } else {
+        echo 'Failed to delete data. Error: ' . error_get_last()['message']; // Display the error message
+    }
+}
+
+
 ?>
 <!DOCTYPE html>
 <html>
@@ -82,7 +103,6 @@ if (isset($_POST['update'])) {
                     <label for="username">Username</label>
                     <label for="password">Password</label>
                     <label for="email">Email</label>
-                    <label for="bankAccount">Bank Account</label>
                     <label for="image">Image</label>
                     <label for="xp">XP</label>
                     <label for="level">Level</label>
@@ -91,7 +111,6 @@ if (isset($_POST['update'])) {
                     <input type="text" name="username" value="<?php echo $data['username']; ?>">
                     <input type="text" name="password" value="<?php echo $data['password']; ?>">
                     <input type="text" name="email" value="<?php echo $data['email']; ?>">
-                    <input type="text" name="bankAccount" value="<?php echo $data['bankAccount']; ?>">
                     <input type="text" name="image" value="<?php echo $data['image']; ?>">
                     <input type="text" name="xp" value="<?php echo $data['xp']; ?>">
                     <input type="text" name="level" value="<?php echo $data['level']; ?>">
@@ -99,6 +118,8 @@ if (isset($_POST['update'])) {
             </div>
 
     <input type="submit" name="update" value="Update Entry">
+    <input type="submit" name="delete" value="Delete entry">>
+
 </form>
 </div>
 

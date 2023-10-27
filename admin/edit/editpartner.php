@@ -18,12 +18,12 @@
     } else {
         echo "Service broken, no ID";
     }
-    $endpoint = '/api/subscription/get/all';
+    $endpoint = '/api/partners/get/all';
     $apiUrl = $apiBaseUrl . $endpoint;
-    $delpoint = $apiBaseUrl . '/api/subscription/delete/' . $entryId . '';
+    $delpoint = $apiBaseUrl . '/api/partners/delete/' . $entryId . '';
 
-    $editpoint = $apiBaseUrl . '/api/subscription/get/' . $entryId . '';
-    $updatepoint = $apiBaseUrl . '/api/subscription/update/premium-subscription/' . $entryId . '';
+    $editpoint = $apiBaseUrl . '/api/partners/get/' . $entryId . '';
+    $updatepoint = $apiBaseUrl . '/api/partners/update/' . $entryId . '';
 
     $response = file_get_contents($editpoint);
 
@@ -40,8 +40,8 @@
 
     if (isset($_POST['update'])) {
         $updateData = [
-            'endDate' => $_POST['endDate'],
-            'discountAmount' => $_POST['discountAmount']
+            'name' => $_POST['name'],
+            'bankAccount' => $_POST['bankAccount']
         ];
 
         // Send a PUT request to update the entry
@@ -58,7 +58,7 @@
         if ($result !== false) {
             echo 'Data updated successfully.';
             sleep(1);
-            header('Location:../premiumsubs.php');
+            header('Location:../partner.php');
         } else {
             echo 'Failed to update data.';
         }
@@ -77,26 +77,25 @@
         if ($result !== false) {
             echo 'Data deleted successfully.';
             sleep(1);
-            header('Location: ../premiumsubs.php');
+            header('Location: ../partner.php');
         } else {
             echo 'Failed to delete data. Error: ' . error_get_last()['message']; // Display the error message
         }
     }
-
     ?>
 
     <body>
         <div class="container">
-            <h1>Edit Client</h1>
+            <h1>Edit Partner</h1>
             <form method="POST" action="">
                 <div class="form-row">
                     <div class="label-column">
-                        <label for="endDate">End date</label>
-                        <label for="discountAmount">Discount amount</label>
+                        <label for="name">Name</label>
+                        <label for="bankAccount">Bank Account</label>
                     </div>
                     <div class="input-column">
-                        <input type="text" name="endDate" value="<?php echo $data['endDate']; ?>">
-                        <input type="text" name="discountAmount" value="<?php echo $data['discountAmount']; ?>">
+                        <input type="text" name="name" value="<?php echo $data['name']; ?>">
+                        <input type="text" name="bankAccount" value="<?php echo $data['bankAccount']; ?>">
                     </div>
                 </div>
                 <input type="submit" name="delete" value="Delete entry">>

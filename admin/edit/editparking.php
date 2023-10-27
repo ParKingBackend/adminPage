@@ -85,7 +85,7 @@ if (isset($_POST['update'])) {
         <label for="address">Address</label>
         <label for="price">Price</label>
         <label for="isPremium">Is Premium</label>
-        <label for="partnerId">Partner ID</label>
+
         <label for="maxSpotsCount">Max Spots Count</label>
         <label for="spotsTaken">Spots Taken</label>
         <label for="isDisabled">Is Disabled</label>
@@ -101,9 +101,6 @@ if (isset($_POST['update'])) {
             <option value="true" <?php if ($data['isPremium']) echo 'selected'; ?>>True</option>
             <option value="false" <?php if (!$data['isPremium']) echo 'selected'; ?>>False</option>
         </select>
-
-        <input type="text" name="partnerId" value="<?php echo $data['partnerId']; ?>">
-
         <input type="text" name="maxSpotsCount" value="<?php echo $data['maxSpotsCount']; ?>">
 
         <input type="text" name="spotsTaken" value="<?php echo $data['spotsTaken']; ?>">

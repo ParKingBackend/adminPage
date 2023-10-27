@@ -19,42 +19,28 @@
     echo 'a { text-decoration: none; color:#333; }';
     echo "</style>";
 
-    $delpoint = $apiBaseUrl . '/api/persons/delete/';
-    $apiUrl = $apiBaseUrl . '/api/client/get/all';
 
-    // Fetch client data from the API
-    $response = file_get_contents($apiUrl);
+    $apiUrl = $apiBaseUrl . '/api/partners/get/all';
+$createUrl = $apiBaseUrl . '/api/partners/create';
 
-    if ($response === false) {
-        die('Failed to fetch client data from the API.');
-    }
 
-    $data = json_decode($response, true);
-
-    if ($data === null) {
-        die('Failed to parse JSON response: ' . json_last_error_msg());
-    } else {
-        // Extract the 'id' values from the API response and store them in an array
-        $clientIds = array_column($data, 'id');
-    }
 
     // Check if the form is submitted
     if (isset($_POST['create'])) {
-        $firstName = $_POST['firstName'];
-        $surname = $_POST['surname'];
-        $clientId = $_POST['clientId'];
+        $name = $_POST['name'];
+        $bankAmount = $_POST['bankAmount'];
 
         // Prepare the data to send to the API
         $postData = [
-            'firstName' => $firstName,
-            'surname' => $surname,
+            'name' => $name,
+            'bankAmount' => $bankAmount,
         ];
 
         // Create a cURL resource
         $ch = curl_init();
 
         // Set cURL options
-        curl_setopt($ch, CURLOPT_URL, $apiBaseUrl . '/api/persons/create/' . $clientId);
+        curl_setopt($ch, CURLOPT_URL, $createUrl);
         curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
         curl_setopt($ch, CURLOPT_HTTPHEADER, [
             'Content-Type: application/json',
@@ -76,7 +62,7 @@
             } else {
                 echo 'Data created successfully.';
                 // Redirect to another page if needed
-                header("Location: ../persons.php");
+                header("Location: ../partner.php");
             }
         }
 
@@ -85,27 +71,18 @@
     }
     ?>
 
-    <body>
+    
         <div class="container">
-            <h1>Add Person</h1>
+            <h1>Add partner</h1>
             <form method="POST" action="">
                 <div class="form-row">
                     <div class="label-column">
-                        <label for="firstName">First name</label>
-                        <label for="surname">Last name</label>
-                        <label for="clientId">Client ID</label>
+                        <label for="name">Name</label>
+                        <label for="bankAmount">Bank Account</label>
                     </div>
                     <div class="input-column">
-                        <input type="text" name="firstName" value="firstName">
-                        <input type="text" name="surname" value="surname">
-                        <select class="select" name="clientId">
-                            <?php
-                            // Generate options for the dropdown based on $clientIds
-                            foreach ($clientIds as $clientId) {
-                                echo '<option value="' . $clientId . '">' . $clientId . '</option>';
-                            }
-                            ?>
-                        </select>
+                        <input type="text" name="name" value="name">
+                        <input type="text" name="bankAmount" value="bankAmount">
                     </div>
                 </div>
                 <input type="submit" name="create" value="Create Entry">
@@ -113,6 +90,5 @@
         </div>
     </body>
 
-</body>
 
 </html>

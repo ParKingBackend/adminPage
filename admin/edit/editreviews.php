@@ -1,3 +1,6 @@
+<?php
+require('../db.php');
+?>
 <!DOCTYPE html>
 <html>
 
@@ -12,85 +15,101 @@
 </head>
 
 <body>
-    <?php
-    require('../db.php');
-    ?>
+<?php
+if (isset($_GET['id'])) {
+    $entryId = $_GET['id'];
+} else {
+    echo "Service broken, no ID";
+}
 
-    <?php
-    if (isset($_GET['id'])) {
-        $entryId = $_GET['id'];
+$endpoint = '/api/review/get/all';
+$apiUrl = $apiBaseUrl . $endpoint;
+$delpoint = $apiBaseUrl . '/api/review/delete/'. $entryId .'';
+
+$editpoint = $apiBaseUrl . '/api/review/get/' . $entryId . '';
+$updatepoint = $apiBaseUrl . '/api/review/update/' . $entryId . '';
+
+$response = file_get_contents($editpoint);
+
+if ($response === false) {
+    die('Failed to fetch data from the API.');
+}
+
+$data = json_decode($response, true);
+
+if ($data === null) {
+    die('Failed to parse JSON response: ' . json_last_error_msg());
+}
+
+if (isset($_POST['update'])) {
+    $updateData = [
+        'title' => $_POST['title'],
+        'description' => $_POST['description'],
+        'rating' => $_POST['rating'],
+    ];
+
+    // Send a PUT request to update the entry
+    $options = [
+        'http' => [
+            'method' => 'PUT',
+            'header' => 'Content-Type: application/json',
+            'content' => json_encode($updateData)
+        ]
+    ];
+    $context = stream_context_create($options);
+    $result = file_get_contents($updatepoint, false, $context);
+
+    if ($result !== false) {
+        echo 'Data updated successfully.';
+        sleep(1);
+        header('Location:../reviews.php');
     } else {
-        echo "Service broken, no ID";
+        echo 'Failed to update data.';
     }
+}
 
-    $endpoint = '/api/review/get/all';
-    $apiUrl = $apiBaseUrl . $endpoint;
-    $delpoint = $apiBaseUrl . '/api/review/delete/';
+if (isset($_POST['delete'])) {
+    // Send a DELETE request to delete the entry
+    $options = [
+        'http' => [
+            'method' => 'DELETE',
+        ],
+    ];
+    $context = stream_context_create($options);
+    $result = file_get_contents($delpoint, false, $context);
 
-    $editpoint = $apiBaseUrl . '/api/review/get/' . $entryId . '';
-    $updatepoint = $apiBaseUrl . '/api/review/update/' . $entryId . '';
-
-    $response = file_get_contents($editpoint);
-
-    if ($response === false) {
-        die('Failed to fetch data from the API.');
+    if ($result !== false) {
+        echo 'Data deleted successfully.';
+        sleep(1);
+        header('Location:../reviews.php');
+    } else {
+        echo 'Failed to delete data.';
     }
+}
 
-    $data = json_decode($response, true);
+?>
 
-    if ($data === null) {
-        die('Failed to parse JSON response: ' . json_last_error_msg());
-    }
-
-    if (isset($_POST['update'])) {
-        $updateData = [
-            'title' => $_POST['title'],
-            'description' => $_POST['description'],
-            'rating' => $_POST['rating'],
-
-        ];
-
-        // Send a PUT request to update the entry
-        $options = [
-            'http' => [
-                'method' => 'PUT',
-                'header' => 'Content-Type: application/json',
-                'content' => json_encode($updateData)
-            ]
-        ];
-        $context = stream_context_create($options);
-        $result = file_get_contents($updatepoint, false, $context);
-
-        if ($result !== false) {
-            echo 'Data updated successfully.';
-            sleep(1);
-            header('Location:../reviews.php');
-        } else {
-            echo 'Failed to update data.';
-        }
-    }
-    ?>
-
-    <div class="container">
-        <h1>Edit Entry</h1>
+<div class="container">
+        <h1>Edit review</h1>
         <form method="POST" action="">
             <div class="form-row">
                 <div class="label-column">
-                    <label for="title">Title</label>
-                    <label for="description">Description</label>
-                    <label for="rating">Rating</label>
-                </div>
+        <label for="title">Title</label>
+        <label for="description">Description</label>
+        <label for="rating">Rating</label>
+        </div>
                 <div class="input-column">
-                    <input type="text" name="title" value="<?php echo $data['title']; ?>">
-                    <input type="text" name="description" value="<?php echo $data['description']; ?>">
-                    <input type="number" name="rating" value="<?php echo $data['rating']; ?>">
-                </div>
+        <input type="text" name="title" value="<?php echo $data['title']; ?>">
+        <input type="text" name="description" value="<?php echo $data['description']; ?>">
+        <input type="number" name="rating" value="<?php echo $data['rating']; ?>">
+        </div>
             </div>
-            <input type="submit" name="update" value="Update Entry">
-        </form>
-    </div>
 
+   
 
-</body>
-
-</html>
+    <input type="submit" name="update" value="Update Entry">
+    
+    <!-- Add a button to delete the entry -->
+    <input type="submit" name="delete" value="Delete entry">
+</form>
+</div>
